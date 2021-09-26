@@ -1,0 +1,64 @@
+/* layer pontaj activitati */
+#layer_p {width: 950px; height: 400px; position: absolute; z-index: 10011; top: 100px; left: 50%; box-shadow: 3px 3px 5px #888; background:#ffffff; border: 1px solid #999999;}
+#layer_p h3.layer {height: 26px; background-color: #b6b6b6; padding: 6px 0 0 15px; margin-top: 0;}
+#layer_p_content {width: 885px; padding: 0 0 0 15px;}
+#layer_p_x {width:20px; height:18px; position:absolute; left:50%; margin-left:450px; top:105px; z-index:10022; background:#efefef; border:1px solid #ccc; color:#333; cursor:pointer; text-align:center; font-weight:bold; padding-top:2px; border-radius:50px;}
+
+#layer_hp {width: 450px; height: 200px; position: absolute; z-index: 10011; top: 200px; left: 50%; box-shadow: 3px 3px 5px #888; background:#ffffff; border: 1px solid #999999;}
+#layer_hp h3.layer {height: 26px; background-color: #b6b6b6; padding: 6px 0 0 15px; margin-top: 0;}
+#layer_hp_content {width: 385px; padding: 0 0 0 15px;}
+#layer_hp_x {width:20px; height:18px; position:absolute; left:50%; margin-left:198px; top:206px; z-index:10022; background:#efefef; border:1px solid #ccc; color:#333; cursor:pointer; text-align:center; font-weight:bold; padding-top:2px; border-radius:50px;}
+
+/* layer pontaj statistici */
+#layer_s {width: 400px; height: 600px; position: absolute; z-index: 1001; top: 30px; left: 50%; box-shadow: 3px 3px 5px #888; background:#ffffff; border: 1px solid #999999;}
+#layer_s h3.layer {height: 26px; background-color: #b6b6b6; padding: 6px 0 0 15px; margin-top: 0;}
+#layer_s_content {width: 385px; padding: 0 0 0 15px;}
+#layer_s_x {width:20px; height:18px; position:absolute; left:50%; margin-left:175px; top:35px; z-index:1002; background:#efefef; border:1px solid #ccc; color:#333; cursor:pointer; text-align:center; font-weight:bold; padding-top:2px; border-radius:50px;}
+
+/* layer costuri deplasari */
+#layer_cost {width: 950px; height: 520px; position: absolute; z-index: 1001; top: 100px; left: 50%; box-shadow: 3px 3px 5px #888; background:#ffffff; border: 1px solid #999999;}
+#layer_cost h3.layer {width: 950px; height: 26px; background-color: #b6b6b6; padding: 6px 0 0 15px; margin-top: 0;}
+#layer_cost_content {width: 935px; padding: 0 0 0 15px;}
+#layer_cost_x {width:20px; height:18px; position:absolute; left:50%; margin-left:475px; top:105px; z-index:1002; background:#efefef; border:1px solid #ccc; color:#333; cursor:pointer; text-align:center; font-weight:bold; padding-top:2px; border-radius:50px;}
+
+/* layer comentarii concedii */
+#layer_co {width: 600px; height: 220px; position: absolute; z-index: 1001; top: 200px; left: 50%; box-shadow: 3px 3px 5px #888; background:#ffffff; border: 1px solid #999999;}
+#layer_co h3.layer {width: 600px; height: 26px; background-color: #b6b6b6; padding: 6px 0 0 20px; margin-top: 0;}
+#layer_co_notes {width: 100%; height: 120px;}
+#layer_co_x {width:20px; height:18px; position: absolute; left:50%; margin-left:275px; top:205px; z-index:1002; background:#efefef; border:1px solid #ccc; color:#333; cursor:pointer; text-align:center; font-weight:bold; padding-top:2px; border-radius:50px;}
+
+/* layer documente concedii */
+#layer_doc {width: 600px; height: 220px; position: absolute; z-index: 1001; top: 200px; left: 50%; box-shadow: 3px 3px 5px #888; background:#ffffff; border: 1px solid #999999;}
+#layer_doc h3.layer {width: 600px; height: 26px; background-color: #b6b6b6; padding: 6px 0 0 20px; margin-top: 0;}
+#layer_doc_content {padding: 0 20px 0 20px;}
+#layer_doc_x {width:20px; height:18px; position: absolute; left:50%; margin-left:275px; top:205px; z-index:1002; background:#efefef; border:1px solid #ccc; color:#333; cursor:pointer; text-align:center; font-weight:bold; padding-top:2px; border-radius:50px;}
+
+/* layer motive concedii */
+#layer_reason {width: 600px; height: 220px; position: absolute; z-index: 1001; top: 200px; left: 50%; box-shadow: 3px 3px 5px #888; background:#ffffff; border: 1px solid #999999;}
+#layer_reason h3.layer {width: 600px; height: 26px; background-color: #b6b6b6; padding: 6px 0 0 20px; margin-top: 0;}
+#layer_reason_notes {width: 100%; height: 120px;}
+#layer_reason_x {width:20px; height:18px; position: absolute; left:50%; margin-left:275px; top:205px; z-index:1002; background:#efefef; border:1px solid #ccc; color:#333; cursor:pointer; text-align:center; font-weight:bold; padding-top:2px; border-radius:50px;}
+
+/* layer chelltuieli auto */
+#layer_costauto {width: 900px; height: 500px; position: fixed; z-index: 1001; top: 50px; left: 50%; box-shadow: 3px 3px 5px #888; background:#ffffff; border: 1px solid #999999;}
+#layer_costauto h3.layer {width: 900px; height: 26px; width: 885px; background-color: #b6b6b6; padding: 6px 0 0 15px; margin-top: 0;}
+#layer_costauto_content {width: 885px; padding: 0 15px 0 15px;}
+#layer_costauto_x {width:20px; height:18px; position:fixed; left:50%; margin-left:425px; top:55px; z-index:1002; background:#efefef; border:1px solid #ccc; color:#333; cursor:pointer; text-align:center; font-weight:bold; padding-top:2px; border-radius:50px;}
+
+/* layer oferta produse */
+#layer_products {width: 950px; height: 520px; position: absolute; z-index: 1001; top: 100px; left: 50%; box-shadow: 3px 3px 5px #888; background:#ffffff; border: 1px solid #999999;}
+#layer_products h3.layer {width: 950px; height: 26px; background-color: #b6b6b6; padding: 6px 0 0 15px; margin-top: 0;}
+#layer_products_content {width: 935px; padding: 0 0 0 15px;}
+#layer_products_x {width:20px; height:18px; position:absolute; left:50%; margin-left:475px; top:105px; z-index:1002; background:#efefef; border:1px solid #ccc; color:#333; cursor:pointer; text-align:center; font-weight:bold; padding-top:2px; border-radius:50px;}
+
+/* layer drepturi rapoarte */
+#layer_reports {width: 950px; height: 450px; position: absolute; z-index: 1001; top: 100px; left: 50%; box-shadow: 3px 3px 5px #888; background:#ffffff; border: 1px solid #999999;}
+#layer_reports h3.layer {width: 950px; height: 26px; background-color: #b6b6b6; padding: 6px 0 0 15px; margin-top: 0;}
+#layer_reports_content {width: 935px; padding: 0 0 0 15px;}
+#layer_reports_x {width:20px; height:18px; position:absolute; left:50%; margin-left:475px; top:105px; z-index:1002; background:#efefef; border:1px solid #ccc; color:#333; cursor:pointer; text-align:center; font-weight:bold; padding-top:2px; border-radius:50px;}
+
+/* layer alocare drepturi rapoarte */
+#layer_reports_alloc {width: 950px; height: 450px; position: absolute; z-index: 1001; top: 100px; left: 50%; box-shadow: 3px 3px 5px #888; background:#ffffff; border: 1px solid #999999;}
+#layer_reports_alloc h3.layer {width: 950px; height: 26px; background-color: #b6b6b6; padding: 6px 0 0 15px; margin-top: 0;}
+#layer_reports_alloc_content {width: 935px; padding: 0 0 0 15px;}
+#layer_reports_alloc_x {width:20px; height:18px; position:absolute; left:50%; margin-left:475px; top:105px; z-index:1002; background:#efefef; border:1px solid #ccc; color:#333; cursor:pointer; text-align:center; font-weight:bold; padding-top:2px; border-radius:50px;}

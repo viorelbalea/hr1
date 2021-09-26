@@ -1,0 +1,65 @@
+body {
+	margin:0px;
+	padding:0px;
+}
+
+.bkdTitle{
+	font: bold 18px 'Arial Black';
+	color: #1f497d;
+	line-height: 22px;
+	text-align: center;
+	height: 50px;
+}
+
+.subTable{
+	font: 12px 'Tahoma';
+	border: 1px solid #bfbfbf;
+	color: black;
+}
+
+.bkdSubTitle{
+	height: 30px;
+	background: #bfbfbf;
+}
+
+.subTd{
+	border: 1px solid #bfbfbf;
+	height: 25px;
+}
+
+.whiteTd{
+	font: 8px 'Tahoma';
+	height:10px;
+}
+
+.subTitle{
+	color: #548dd4;
+	line-height: 18px;
+	font: 13px 'Arial Black';
+}
+
+.tallTd{
+	height: 40px;
+	vertical-align: top;
+}
+
+.veryTallTd{
+	height: 60px;
+	vertical-align: top;
+}
+
+.leftTd{
+	width: 350px;
+}
+
+.td4{
+	width: 190px;
+	vertical-align: top;
+}
+
+.divInfo{
+	float:right; 
+	width:640px; 
+	text-align:justify; 
+	margin:0 5px 0 0;
+}

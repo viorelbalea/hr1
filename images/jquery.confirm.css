@@ -1,0 +1,89 @@
+#confirmOverlay{
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	background-color: rgba(128,128,128,0.5);
+	z-index:100000;
+}
+
+#confirmBox{
+	position: fixed;
+
+    box-shadow: 0px 0px 3px 1px #e7e7e7 inset;
+
+    font-family: helvetica;
+
+
+display: block;
+
+left: 50%;
+margin-left: -150px;
+border: 1px solid #cccccc;
+background: #f3f5f7;
+width: 300px;
+z-index: 100;
+margin-top: 60px;
+border-radius: 3px 0px 3px 3px;
+padding: 0px 0px 20px 0px;
+}
+
+#confirmBox h1,
+#confirmBox p{
+	background-color: #e7e7e7;
+    padding: 6px 35px 0 15px;
+    margin-top: 0;
+    font-family: helvetica;
+    font-size: 16px;
+    height: 26px;
+    border-top-right-radius: 5px;
+    left: 50%;
+    z-index: 1002;
+}
+
+#confirmBox h1{
+	letter-spacing:0.3px;
+	color:#888;
+}
+
+#confirmBox p{
+padding: 15px 0px 12px 40px;
+margin: 0px;
+background: none;
+width: 235px;
+border: none;
+color: #666666;
+text-shadow: 1px 1px 1px #ffffff;
+}
+
+#confirmButtons{
+	text-align:center;
+}
+
+#confirmBox .button{
+	display:inline-block;
+	position:relative;
+border: none;
+background: #cc0000;
+border-radius: 3px;
+color: #ffffff;
+padding: 5px 10px;
+margin-top: 20px;
+margin-right: 35px;
+cursor: pointer;
+font-size: 12px;
+font-weight: bold;
+
+}
+
+#confirmBox .button:last-child{	margin-right:0;}
+
+#confirmBox .button span{
+	position:absolute;
+	top:0;
+	right:-5px;
+	background:url('buttons.png') no-repeat;
+	width:5px;
+	height:33px
+}

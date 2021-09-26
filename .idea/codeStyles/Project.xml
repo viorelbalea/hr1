@@ -1,0 +1,23 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <option name="RIGHT_MARGIN" value="180" />
+    <codeStyleSettings language="CoffeeScript">
+      <option name="RIGHT_MARGIN" value="180" />
+    </codeStyleSettings>
+    <codeStyleSettings language="HTML">
+      <option name="RIGHT_MARGIN" value="180" />
+    </codeStyleSettings>
+    <codeStyleSettings language="JSON">
+      <option name="RIGHT_MARGIN" value="180" />
+    </codeStyleSettings>
+    <codeStyleSettings language="JavaScript">
+      <option name="RIGHT_MARGIN" value="180" />
+    </codeStyleSettings>
+    <codeStyleSettings language="PHP">
+      <option name="RIGHT_MARGIN" value="180" />
+    </codeStyleSettings>
+    <codeStyleSettings language="Twig">
+      <option name="RIGHT_MARGIN" value="180" />
+    </codeStyleSettings>
+  </code_scheme>
+</component>

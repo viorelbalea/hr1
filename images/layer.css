@@ -1,0 +1,377 @@
+.eticheta {
+    font-family: helvetica;
+    font-size: 12px;
+    position: absolute;
+    background-color: #cc0000;
+    float: left;
+    color: #FFF;
+    width: 120px;
+    height: 15px;
+    padding-left: 11px;
+    padding-bottom: 2px;
+    margin-top: 56px;
+    margin-left: -74px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+}
+ 
+#products_table tr:nth-child(even) td {
+    background-color: #e7e7e7;
+
+}
+
+#products_table tr:nth-child(1) td {
+    padding-bottom: 10px;
+}
+
+#layer_candidates_review {
+    width: 400px;
+    height: 520px;
+    margin-left: -200px;
+}
+
+#layer_candidates_review_x {
+    margin-left: 175px;
+}
+
+#layer_candidates_colst {
+    width: 130px;
+}
+
+#layer_candidates_save {
+    text-align: center;
+    width: 100%;
+}
+
+#layer_candidates_scroll {
+    height: 420px;
+    overflow-y: auto;
+}
+
+#layer_meeting {
+    width: 300px;
+    height: 155px;
+    margin-left: -150px;
+}
+
+#layer_meeting_x {
+    margin-left: 125px;
+}
+
+/* layer pontaj activitati */
+#layer_p {
+    width: 900px;
+    height: 440px;
+    margin-left: -450px;
+}
+
+#layer_p_x {
+    margin-left: 425px;
+}
+
+#layer_p_scroll {
+    height: 235px;
+    overflow-y: scroll;
+    padding-right: 15px;
+}
+
+#layer_hp {
+    width: 450px;
+    height: 235px;
+    margin-left: -225px;
+}
+
+#layer_hp_content {
+    padding: 0 15px 0 15px;
+}
+
+#layer_hp_x {
+    margin-left: 200px;
+}
+
+/* layer pontaj statistici */
+#layer_s {
+    width: 350px;
+    height: 550px;
+    margin-left: -175px;
+}
+
+#layer_s_content {
+    height: 500px;
+    overflow-y: auto;
+}
+
+#layer_s_x {
+    margin-left: 150px;
+}
+
+/* layer costuri deplasari */
+#layer_cost {
+    width: 1010px;
+    height: 485px;
+    margin-left: -505px;
+}
+
+#layer_cost_content {
+    height: 500px;
+}
+
+#layer_cost_x {
+    margin-left: 480px;
+}
+
+#layer_cost_scroll {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 300px;
+    width: 995px;
+}
+
+#layer_displacement {
+    width: 1010px;
+    height: 485px;
+    margin-left: -505px;
+}
+
+#layer_displacement_content {
+    height: 500px;
+}
+
+#layer_displacement_x {
+    margin-left: 480px;
+}
+
+#layer_displacement_scroll {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 300px;
+    width: 995px;
+}
+
+#layer_foi {
+    width: 700px;
+    height: 500px;
+    margin-left: -350px;
+}
+
+#layer_foi_x {
+    margin-left: 325px;
+}
+
+/* layer comentarii concedii */
+#layer_co {
+    width: 600px;
+    height: 220px;
+    margin-left: -300px;
+}
+
+#layer_co_notes {
+    width: 100%;
+    height: 90%;
+}
+
+#layer_co_x {
+    margin-left: 275px;
+}
+
+/* layer documente concedii */
+#layer_doc {
+    width: 600px;
+    height: 220px;
+    margin-left: -300px;
+}
+
+#layer_doc_content {
+    padding: 0 0 0 0;
+}
+
+#layer_doc_scroll {
+    height: 130px;
+    overflow-y: scroll;
+}
+
+#layer_doc_x {
+    margin-left: 275px;
+}
+
+/* layer motive concedii */
+#layer_reason {
+    width: 600px;
+    height: 220px;
+    margin-left: -300px;
+}
+
+#layer_reason_x {
+    margin-left: 275px;
+}
+
+/* layer chelltuieli auto */
+#layer_costauto {
+    width: 700px;
+    height: 500px;
+    margin-left: -350px;
+}
+
+#layer_costauto_x {
+    margin-left: 325px;
+}
+
+#layer_costauto_scroll {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 380px;
+}
+
+/* layer oferta produse */
+#layer_products {
+    width: 750px;
+    height: 500px;
+    margin-left: -375px;
+}
+
+#layer_products_x {
+    margin-left: 350px;
+}
+
+#layer_products_table {
+    height: 320px;
+    overflow-y: scroll;
+}
+
+/* layer drepturi rapoarte */
+#layer_reports {
+    width: 750px;
+    height: 340px;
+    margin-left: -375px;
+}
+
+#layer_reports_x {
+    margin-left: 350px;
+}
+
+/* layer alocare drepturi rapoarte */
+#layer_reports_alloc {
+    width: 750px;
+    height: 304px;
+    margin-left: -375px;
+}
+
+#layer_reports_alloc_x {
+    margin-left: 350px;
+}
+
+/* layer plati inventar */
+
+#layer_inventarpayments {
+    width: 860px;
+    height: 370px;
+    margin-left: -430px;
+}
+
+#layer_inventarpayments_x {
+    margin-left: 405px;
+}
+
+/* titlu layere */
+
+.dungaLayer {
+    border-style: inset;
+    border-width: 1px;
+    border-color: #cccccc;
+}
+
+.layerContent {
+    padding: 0 15px 0 15px;
+}
+
+div.layer {
+    position: fixed;
+    z-index: 1001;
+    top: 30px;
+    left: 50%;
+    box-shadow: 0px 0px 3px 1px #e7e7e7 inset;
+    background: #FFF;
+    border: 1px solid #999999;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-family: helvetica;
+}
+
+div.layer_print {
+    box-shadow: 0px 0px 3px 1px #e7e7e7 inset;
+    background: #FFF;
+    border: 1px solid #999999;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-family: helvetica;
+}
+
+h3.layer {
+    background-color: #e7e7e7;
+    padding: 6px 35px 0 15px;
+    margin-top: 0;
+    font-family: helvetica;
+    font-size: 16px;
+    height: 26px;
+    border-top-right-radius: 5px;
+    left: 50%;
+    z-index: 1002;
+
+}
+
+#reportTitle {
+    font-weight: normal;
+}
+
+.butonX {
+    font-family: helvetica;
+    font-size: 16px;
+    width: 20px;
+    height: 18px;
+    position: fixed;
+    left: 50%;
+    top: 35px;
+    border: 1px solid #ccc;
+    color: #333;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 2px;
+    border-radius: 50px;
+    z-index: 1002;
+}
+
+.observatiiTextbox {
+    resize: none;
+    padding: 0 20px 0 20px;
+    width: 550px;
+    height: 130px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.saveObservatii {
+    float: right;
+    position: relative;
+    margin-right: 8px;
+    margin-top: 4px;
+    width: 180px;
+    z-index: 1002;
+    text-align: right;
+}
+
+#layer_co_notes {
+    resize: none;
+    background-color: #FFF;
+}
+
+.screenLayer {
+    background-color: #FFF;
+}
