@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.18, created on 2021-09-25 07:18:57
+<?php /* Smarty version 2.6.18, created on 2021-09-27 09:41:28
          compiled from persons_prof.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'translate', 'persons_prof.tpl', 16, false),array('modifier', 'default', 'persons_prof.tpl', 166, false),array('modifier', 'date_format', 'persons_prof.tpl', 176, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'translate', 'persons_prof.tpl', 16, false),array('modifier', 'default', 'persons_prof.tpl', 167, false),array('modifier', 'date_format', 'persons_prof.tpl', 177, false),)), $this); ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "persons_menu.tpl", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
@@ -165,6 +165,7 @@ unset($_smarty_tpl_vars);
 ">
                             </td>
                         </tr>
+                        <!--
                         <tr>
                             <td><b><?php echo smarty_function_translate(array('label' => 'Permis auto'), $this);?>
 :</b></td>
@@ -260,6 +261,7 @@ unset($_smarty_tpl_vars);
                             <td><input type="text" name="DrivingNotes" value="<?php echo ((is_array($_tmp=@$this->_tpl_vars['info']['DrivingNotes'])) ? $this->_run_mod_handler('default', true, $_tmp, '') : smarty_modifier_default($_tmp, '')); ?>
 " size="40" maxlength="255"></td>
                         </tr>
+                        -->
                         <tr>
                             <td><b><?php echo smarty_function_translate(array('label' => 'Observatii'), $this);?>
 :</b></td>
@@ -326,23 +328,23 @@ unset($_smarty_tpl_vars);
 " value="<?php echo ((is_array($_tmp=$this->_tpl_vars['item']['StartDate'])) ? $this->_run_mod_handler('date_format', true, $_tmp, "%d.%m.%Y") : smarty_modifier_date_format($_tmp, "%d.%m.%Y")); ?>
 " class="formstyle"
                                                        value="" size="10" maxlength="10">
-                                                <SCRIPT LANGUAGE="JavaScript" ID="js1_<?php echo $this->_tpl_vars['key']; ?>
+                                                <SCRIPT LANGUAGE="JavaScript" ID="jsC1_<?php echo $this->_tpl_vars['key']; ?>
 ">
-                                                    var cal1_<?php echo $this->_tpl_vars['key']; ?>
+                                                    var calC1_<?php echo $this->_tpl_vars['key']; ?>
  = new CalendarPopup();
-                                                    cal1_<?php echo $this->_tpl_vars['key']; ?>
+                                                    calC1_<?php echo $this->_tpl_vars['key']; ?>
 .isShowNavigationDropdowns = true;
-                                                    cal1_<?php echo $this->_tpl_vars['key']; ?>
+                                                    calC1_<?php echo $this->_tpl_vars['key']; ?>
 .setYearSelectStartOffset(10);
                                                     //writeSource("js1_<?php echo $this->_tpl_vars['key']; ?>
 ");
                                                 </SCRIPT>
-                                                <A HREF="#" onClick="cal1_<?php echo $this->_tpl_vars['key']; ?>
+                                                <A HREF="#" onClick="calC1_<?php echo $this->_tpl_vars['key']; ?>
 .select(document.getElementById('CertifStartDate_<?php echo $this->_tpl_vars['key']; ?>
-'),'anchor1_<?php echo $this->_tpl_vars['key']; ?>
+'),'anchorC1_<?php echo $this->_tpl_vars['key']; ?>
 ','dd.MM.yyyy'); return false;"
-                                                   NAME="anchor1_<?php echo $this->_tpl_vars['key']; ?>
-" ID="anchor1_<?php echo $this->_tpl_vars['key']; ?>
+                                                   NAME="anchorC1_<?php echo $this->_tpl_vars['key']; ?>
+" ID="anchorC1_<?php echo $this->_tpl_vars['key']; ?>
 "><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
                                             </td>
                                             <td>
@@ -643,6 +645,11 @@ unset($_smarty_tpl_vars);
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                     </tr>
+                                    <?php if ($this->_tpl_vars['psyDocsNew']): ?>
+                                        <tr>
+                                            <td colspan="7" style="color: white; background-color: grey; padding: 5px; font-size: 12px">Sectiune date curente</td>
+                                        </tr>
+                                    <?php endif; ?>
                                     <?php $_from = $this->_tpl_vars['psyDocsNew']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['item']):
 ?>
@@ -766,6 +773,9 @@ unset($_smarty_tpl_vars);
                                         </tr>
                                     <?php endforeach; endif; unset($_from); ?>
                                     <tr>
+                                        <td colspan="6" style="color: white; background-color: green; padding: 5px; font-size: 12px">Sectiune adaugare Inregistrare noua</td>
+                                    </tr>
+                                    <tr>
                                         <td><input type="text" id="PsyDocName_0" name="PsyDocName_0" size="50" maxlength="256"></td>
                                         <td><input type="text" id="PsyDocNumber_0" name="PsyDocNumber_0" size="10" maxlength="10"></td>
                                         <td>
@@ -851,6 +861,11 @@ unset($_smarty_tpl_vars);
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                     </tr>
+                                    <?php if ($this->_tpl_vars['medDocsNew']): ?>
+                                        <tr>
+                                            <td colspan="7" style="color: white; background-color: grey; padding: 5px; font-size: 12px">Sectiune date curente</td>
+                                        </tr>
+                                    <?php endif; ?>
                                     <?php $_from = $this->_tpl_vars['medDocsNew']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['item']):
 ?>
@@ -974,6 +989,9 @@ unset($_smarty_tpl_vars);
                                         </tr>
                                     <?php endforeach; endif; unset($_from); ?>
                                     <tr>
+                                        <td colspan="6" style="color: white; background-color: green; padding: 5px; font-size: 12px">Sectiune adaugare Inregistrare noua</td>
+                                    </tr>
+                                    <tr>
                                         <td><input type="text" id="DocName_0" name="DocName_0" size="50" maxlength="256"></td>
                                         <td><input type="text" id="DocNumber_0" name="DocNumber_0" size="10" maxlength="10"></td>
                                         <td>
@@ -1058,14 +1076,14 @@ unset($_smarty_tpl_vars);
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                     </tr>
-                                    <tr>
-                                        <td colspan="6">Categorii de vehicule</td>
-                                    </tr>
-
+                                    <?php if ($this->_tpl_vars['cppc']): ?>
+                                        <tr>
+                                            <td colspan="6" style="color: white; background-color: grey; padding: 5px; font-size: 12px">Sectiune date curente</td>
+                                        </tr>
+                                    <?php endif; ?>
                                     <?php $_from = $this->_tpl_vars['cppc']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['item']):
 ?>
-
                                         <tr>
                                             <td>
                                                 <input type="text" id="ReleaseDate_<?php echo $this->_tpl_vars['key']; ?>
@@ -1075,21 +1093,21 @@ unset($_smarty_tpl_vars);
                                                        value="" size="10" maxlength="10">
                                                 <SCRIPT LANGUAGE="JavaScript" ID="js1_<?php echo $this->_tpl_vars['key']; ?>
 ">
-                                                    var calcprd1_<?php echo $this->_tpl_vars['key']; ?>
+                                                    var calrd_<?php echo $this->_tpl_vars['key']; ?>
  = new CalendarPopup();
-                                                    calcprd1_<?php echo $this->_tpl_vars['key']; ?>
+                                                    calrd_<?php echo $this->_tpl_vars['key']; ?>
 .isShowNavigationDropdowns = true;
-                                                    calcprd1_<?php echo $this->_tpl_vars['key']; ?>
+                                                    calrd_<?php echo $this->_tpl_vars['key']; ?>
 .setYearSelectStartOffset(10);
                                                     //writeSource("js1_<?php echo $this->_tpl_vars['key']; ?>
 ");
                                                 </SCRIPT>
-                                                <A HREF="#" onClick="cal1_<?php echo $this->_tpl_vars['key']; ?>
+                                                <A HREF="#" onClick="calrd_<?php echo $this->_tpl_vars['key']; ?>
 .select(document.getElementById('ReleaseDate_<?php echo $this->_tpl_vars['key']; ?>
-'),'anchorcprd_<?php echo $this->_tpl_vars['key']; ?>
+'),'anchorrd_<?php echo $this->_tpl_vars['key']; ?>
 ','dd.MM.yyyy'); return false;"
-                                                   NAME="anchorcprd_<?php echo $this->_tpl_vars['key']; ?>
-" ID="anchorcprd_<?php echo $this->_tpl_vars['key']; ?>
+                                                   NAME="anchorrd_<?php echo $this->_tpl_vars['key']; ?>
+" ID="anchorrd_<?php echo $this->_tpl_vars['key']; ?>
 "><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
                                             </td>
                                             <td>
@@ -1121,45 +1139,74 @@ unset($_smarty_tpl_vars);
                                                 <input type="text" id="DrivingLicenseNumber_<?php echo $this->_tpl_vars['key']; ?>
 " name="DrivingLicenseNumber_<?php echo $this->_tpl_vars['key']; ?>
 " value="<?php echo $this->_tpl_vars['item']['DrivingLicenseNumber']; ?>
-" size="50" maxlength="255">
+" size="20" maxlength="20">
                                             </td>
                                             <td>
                                                 <input type="text" id="CertificateNumber_<?php echo $this->_tpl_vars['key']; ?>
 " name="CertificateNumber_<?php echo $this->_tpl_vars['key']; ?>
 " value="<?php echo $this->_tpl_vars['item']['CertificateNumber']; ?>
-" size="50" maxlength="255">
+" size="20" maxlength="20">
                                             </td>
                                             <td><?php if ($this->_tpl_vars['info']['rw'] == 1): ?>
                                                     <div id="button_mod"><a href="#"
-                                                                            onclick="if (document.getElementById('DocNumber_<?php echo $this->_tpl_vars['key']; ?>
+                                                                            onclick="if (document.getElementById('DrivingLicenseNumber_<?php echo $this->_tpl_vars['key']; ?>
 ').value
-                                                                                    && document.getElementById('DocDate_<?php echo $this->_tpl_vars['key']; ?>
+                                                                                    && document.getElementById('ReleaseDate_<?php echo $this->_tpl_vars['key']; ?>
 ').value
-                                                                                    && checkDate(document.getElementById('DocDate_<?php echo $this->_tpl_vars['key']; ?>
-').value, 'Data document')
-                                                                                    && document.getElementById('DocName_<?php echo $this->_tpl_vars['key']; ?>
+                                                                                    && checkDate(document.getElementById('ReleaseDate_<?php echo $this->_tpl_vars['key']; ?>
+').value, 'Data Eliberare')
+                                                                                    && document.getElementById('ExpirationDate_<?php echo $this->_tpl_vars['key']; ?>
 ').value
-                                                                                    && document.getElementById('Issuer_<?php echo $this->_tpl_vars['key']; ?>
-').value
-                                                                                    && document.getElementById('DocType_<?php echo $this->_tpl_vars['key']; ?>
-').value)
+                                                                                    && checkDate(document.getElementById('ExpirationDate_<?php echo $this->_tpl_vars['key']; ?>
+').value, 'Data Expirare'))
                                                                                     window.location.href = './?m=persons&o=editprof&PersonID=<?php echo $_GET['PersonID']; ?>
-&action=editnewmedical&Id=<?php echo $this->_tpl_vars['key']; ?>
-&DocNumber='
-                                                                                    + escape(document.getElementById('DocNumber_<?php echo $this->_tpl_vars['key']; ?>
-').value)
-                                                                                    + '&DocName=' + escape(document.getElementById('DocName_<?php echo $this->_tpl_vars['key']; ?>
-').value)
-                                                                                    + '&DocDate=' + document.getElementById('DocDate_<?php echo $this->_tpl_vars['key']; ?>
+&action=editCPPC&Id=<?php echo $this->_tpl_vars['key']; ?>
+&ReleaseDate='
+                                                                                    + document.getElementById('ReleaseDate_<?php echo $this->_tpl_vars['key']; ?>
 ').value
-                                                                                    + '&Issuer=' + escape(document.getElementById('Issuer_<?php echo $this->_tpl_vars['key']; ?>
+                                                                                    + '&ExpirationDate=' + escape(document.getElementById('ExpirationDate_<?php echo $this->_tpl_vars['key']; ?>
 ').value)
-                                                                                    + '&DocType=' + escape(document.getElementById('DocType_<?php echo $this->_tpl_vars['key']; ?>
+                                                                                    + '&DrivingLicenseNumber=' + escape(document.getElementById('DrivingLicenseNumber_<?php echo $this->_tpl_vars['key']; ?>
 ').value)
-                                                                                    + '&Approval=' + escape(document.getElementById('Approval_<?php echo $this->_tpl_vars['key']; ?>
+                                                                                    + '&CertificateNumber=' + escape(document.getElementById('CertificateNumber_<?php echo $this->_tpl_vars['key']; ?>
 ').value)
-                                                                                    + '&Recommendations=' + escape(document.getElementById('Recommendations_<?php echo $this->_tpl_vars['key']; ?>
-').value);
+                                                                                    + (document.getElementById('AM_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&AM=1' :'')
+                                                                                    + (document.getElementById('A1_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&A1=1' :'')
+                                                                                    + (document.getElementById('A2_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&A2=1' :'')
+                                                                                    + (document.getElementById('A_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&A=1' :'')
+                                                                                    + (document.getElementById('B1_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&B1=1' :'')
+                                                                                    + (document.getElementById('B_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&B=1' :'')
+                                                                                    + (document.getElementById('BE_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&BE=1' :'')
+                                                                                    + (document.getElementById('C1_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&C1=1' :'')
+                                                                                    + (document.getElementById('C1E_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&C1E=1' :'')
+                                                                                    + (document.getElementById('C_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&C=1' :'')
+                                                                                    + (document.getElementById('CE_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&CE=1' :'')
+                                                                                    + (document.getElementById('D1_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&D1=1' :'')
+                                                                                    + (document.getElementById('D1E_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&D1E=1' :'')
+                                                                                    + (document.getElementById('D_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&D=1' :'')
+                                                                                    + (document.getElementById('DE_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&DE=1' :'')
+                                                                                    + (document.getElementById('Tr_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&Tr=1' :'')
+                                                                                    + (document.getElementById('Tb_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&Tb=1' :'')
+                                                                                    + (document.getElementById('Tv_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&Tv=1' :'')
+                                                                                    ;
                                                                                     else alert('Va rugam sa completati toate informatiile'); return false;"
                                                                             title="Modifica Aviz Medical"><b>Mod</b></a></div><?php endif; ?>
                                             </td>
@@ -1167,9 +1214,9 @@ unset($_smarty_tpl_vars);
                                                     <div id="button_del"><a href="#"
                                                                             onclick="if (confirm('<?php echo smarty_function_translate(array('label' => 'Sunteti sigur(a)?'), $this);?>
 ')) window.location.href = './?m=persons&o=editprof&PersonID=<?php echo $_GET['PersonID']; ?>
-&action=delnewmedical&Id=<?php echo $this->_tpl_vars['key']; ?>
+&action=delCPPC&Id=<?php echo $this->_tpl_vars['key']; ?>
 '; return false;"
-                                                                            title="<?php echo smarty_function_translate(array('label' => 'Sterge atestat'), $this);?>
+                                                                            title="<?php echo smarty_function_translate(array('label' => 'Sterge Certificat'), $this);?>
 "><b>Del</b></a></div><?php endif; ?></td>
                                         </tr>
                                         <tr>
@@ -1178,46 +1225,84 @@ unset($_smarty_tpl_vars);
                                         <tr>
                                             <td colspan="6">
 
-                                                <input type="checkbox" id="AM_0" name="AM_0" value="1" <?php if (( $this->_tpl_vars['item']['AM'] == 1 )): ?> checked <?php endif; ?> />
+                                                <input type="checkbox" id="AM_<?php echo $this->_tpl_vars['key']; ?>
+" name="AM_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['AM'] == 1 )): ?> checked <?php endif; ?> />
                                                 AM&nbsp;&nbsp;
-                                                <input type="checkbox" id="A1_0" name="A1_0" value="1" <?php if (( $this->_tpl_vars['item']['A1'] == 1 )): ?> checked <?php endif; ?>/>
+                                                <input type="checkbox" id="A1_<?php echo $this->_tpl_vars['key']; ?>
+" name="A1_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['A1'] == 1 )): ?> checked <?php endif; ?>/>
                                                 A1
-                                                <input type="checkbox" id="A2_0" name="A2_0" value="1" <?php if (( $this->_tpl_vars['item']['A2'] == 1 )): ?> checked <?php endif; ?>/>
+                                                <input type="checkbox" id="A2_<?php echo $this->_tpl_vars['key']; ?>
+" name="A2_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['A2'] == 1 )): ?> checked <?php endif; ?>/>
                                                 A2
-                                                <input type="checkbox" id="A_0" name="A_0" value="1" <?php if (( $this->_tpl_vars['item']['A'] == 1 )): ?> checked <?php endif; ?> />
+                                                <input type="checkbox" id="A_<?php echo $this->_tpl_vars['key']; ?>
+" name="A_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['A'] == 1 )): ?> checked <?php endif; ?> />
                                                 A
-                                                <input type="checkbox" id="B1_0" name="B1_0" value="1" <?php if (( $this->_tpl_vars['item']['B1'] == 1 )): ?> checked <?php endif; ?> />
+                                                <input type="checkbox" id="B1_<?php echo $this->_tpl_vars['key']; ?>
+" name="B1_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['B1'] == 1 )): ?> checked <?php endif; ?> />
                                                 B1
-                                                <input type="checkbox" id="B_0" name="B_0" value="1" <?php if (( $this->_tpl_vars['item']['B'] == 1 )): ?> checked <?php endif; ?> />
+                                                <input type="checkbox" id="B_<?php echo $this->_tpl_vars['key']; ?>
+" name="B_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['B'] == 1 )): ?> checked <?php endif; ?> />
                                                 B
-                                                <input type="checkbox" id="BE_0" name="BE_0" value="1" <?php if (( $this->_tpl_vars['item']['BE'] == 1 )): ?> checked <?php endif; ?> />
+                                                <input type="checkbox" id="BE_<?php echo $this->_tpl_vars['key']; ?>
+" name="BE_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['BE'] == 1 )): ?> checked <?php endif; ?> />
                                                 BE
-                                                <input type="checkbox" id="C1_0" name="C1_0" value="1" <?php if (( $this->_tpl_vars['item']['C1'] == 1 )): ?> checked <?php endif; ?> />
+                                                <input type="checkbox" id="C1_<?php echo $this->_tpl_vars['key']; ?>
+" name="C1_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['C1'] == 1 )): ?> checked <?php endif; ?> />
                                                 C1
-                                                <input type="checkbox" id="C1E_0" name="C1E_0" value="1" <?php if (( $this->_tpl_vars['item']['C1E'] == 1 )): ?> checked <?php endif; ?> />
+                                                <input type="checkbox" id="C1E_<?php echo $this->_tpl_vars['key']; ?>
+" name="C1E_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['C1E'] == 1 )): ?> checked <?php endif; ?> />
                                                 C1E
-                                                <input type="checkbox" id="C_0" name="C_0" value="1" <?php if (( $this->_tpl_vars['item']['C'] == 1 )): ?> checked <?php endif; ?> />
+                                                <input type="checkbox" id="C_<?php echo $this->_tpl_vars['key']; ?>
+" name="C_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['C'] == 1 )): ?> checked <?php endif; ?> />
                                                 C
-                                                <input type="checkbox" id="CE_0" name="CE_0" value="1" <?php if (( $this->_tpl_vars['item']['CE'] == 1 )): ?> checked <?php endif; ?> />
+                                                <input type="checkbox" id="CE_<?php echo $this->_tpl_vars['key']; ?>
+" name="CE_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['CE'] == 1 )): ?> checked <?php endif; ?> />
                                                 CE
-                                                <input type="checkbox" id="D1_0" name="D1_0" value="1" <?php if (( $this->_tpl_vars['item']['D1'] == 1 )): ?> checked <?php endif; ?> />
+                                                <input type="checkbox" id="D1_<?php echo $this->_tpl_vars['key']; ?>
+" name="D1_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['D1'] == 1 )): ?> checked <?php endif; ?> />
                                                 D1
-                                                <input type="checkbox" id="D1E_0" name="D1E_0" value="1" <?php if (( $this->_tpl_vars['item']['D1E'] == 1 )): ?> checked <?php endif; ?> />
+                                                <input type="checkbox" id="D1E_<?php echo $this->_tpl_vars['key']; ?>
+" name="D1E_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['D1E'] == 1 )): ?> checked <?php endif; ?> />
                                                 D1E
-                                                <input type="checkbox" id="D_0" name="D_0" value="1" <?php if (( $this->_tpl_vars['item']['D'] == 1 )): ?> checked <?php endif; ?> />
+                                                <input type="checkbox" id="D_<?php echo $this->_tpl_vars['key']; ?>
+" name="D_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['D'] == 1 )): ?> checked <?php endif; ?> />
                                                 D
-                                                <input type="checkbox" id="DE_0" name="DE_0" value="1" <?php if (( $this->_tpl_vars['item']['DE'] == 1 )): ?> checked <?php endif; ?> />
+                                                <input type="checkbox" id="DE_<?php echo $this->_tpl_vars['key']; ?>
+" name="DE_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['DE'] == 1 )): ?> checked <?php endif; ?> />
                                                 DE
-                                                <input type="checkbox" id="Tr_0" name="Tr_0" value="1" <?php if (( $this->_tpl_vars['item']['Tr'] == 1 )): ?> checked <?php endif; ?> />
+                                                <input type="checkbox" id="Tr_<?php echo $this->_tpl_vars['key']; ?>
+" name="Tr_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['Tr'] == 1 )): ?> checked <?php endif; ?> />
                                                 Tr
-                                                <input type="checkbox" id="Tb_0" name="Tb_0" value="1" <?php if (( $this->_tpl_vars['item']['Tb'] == 1 )): ?> checked <?php endif; ?> />
+                                                <input type="checkbox" id="Tb_<?php echo $this->_tpl_vars['key']; ?>
+" name="Tb_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['Tb'] == 1 )): ?> checked <?php endif; ?> />
                                                 Tb
-                                                <input type="checkbox" id="Tv_0" name="Tv_0" value="1" <?php if (( $this->_tpl_vars['item']['Tv'] == 1 )): ?> checked <?php endif; ?> />
+                                                <input type="checkbox" id="Tv_<?php echo $this->_tpl_vars['key']; ?>
+" name="Tv_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['Tv'] == 1 )): ?> checked <?php endif; ?> />
                                                 Tv
                                             </td>
                                         </tr>
-                                        -->
                                     <?php endforeach; endif; unset($_from); ?>
+                                    <tr>
+                                        <td colspan="5" style="color: white; background-color: green; padding: 5px; font-size: 12px">Sectiune adaugare Inregistrare noua</td>
+                                    </tr>
                                     <tr>
                                         <td>
                                             <input type="text" id="ReleaseDate_0" name="ReleaseDate_0" class="formstyle" value="" size="10" maxlength="10">
@@ -1257,24 +1342,24 @@ unset($_smarty_tpl_vars);
                                                                                 + '&ReleaseDate=' + escape(document.getElementById('ReleaseDate_0').value)
                                                                                 + '&ExpirationDate=' + escape(document.getElementById('ExpirationDate_0').value)
                                                                                 + '&CertificateNumber=' + document.getElementById('CertificateNumber_0').value
-                                                                                + '&AM=' + document.getElementById('AM_0').value
-                                                                                + '&A1=' + document.getElementById('A1_0').value
-                                                                                + '&A2=' + document.getElementById('A2_0').value
-                                                                                + '&A=' + document.getElementById('A_0').value
-                                                                                + '&B1=' + document.getElementById('B1_0').value
-                                                                                + '&B=' + document.getElementById('B_0').value
-                                                                                + '&BE=' + document.getElementById('BE_0').value
-                                                                                + '&C1=' + document.getElementById('C1_0').value
-                                                                                + '&C1E=' + document.getElementById('C1E_0').value
-                                                                                + '&C=' + document.getElementById('C_0').value
-                                                                                + '&CE=' + document.getElementById('CE_0').value
-                                                                                + '&D1=' + document.getElementById('D1_0').value
-                                                                                + '&D1E=' + document.getElementById('D1E_0').value
-                                                                                + '&D=' + document.getElementById('D_0').value
-                                                                                + '&DE=' + document.getElementById('DE_0').value
-                                                                                + '&Tr=' + document.getElementById('Tr_0').value
-                                                                                + '&Tb=' + document.getElementById('Tb_0').value
-                                                                                + '&Tv=' + document.getElementById('Tv_0').value
+                                                                                + (document.getElementById('AM_0').checked ? '+&AM=1' :'')
+                                                                                + (document.getElementById('A1_0').checked ? '+&A1=1' :'')
+                                                                                + (document.getElementById('A2_0').checked ? '+&A2=1' :'')
+                                                                                + (document.getElementById('A_0').checked ? '+&A=1' :'')
+                                                                                + (document.getElementById('B1_0').checked ? '+&B1=1' :'')
+                                                                                + (document.getElementById('B_0').checked ? '+&B=1' :'')
+                                                                                + (document.getElementById('BE_0').checked ? '+&BE=1' :'')
+                                                                                + (document.getElementById('C1_0').checked ? '+&C1=1' :'')
+                                                                                + (document.getElementById('C1E_0').checked ? '+&C1E=1' :'')
+                                                                                + (document.getElementById('C_0').checked ? '+&C=1' :'')
+                                                                                + (document.getElementById('CE_0').checked ? '+&CE=1' :'')
+                                                                                + (document.getElementById('D1_0').checked ? '+&D1=1' :'')
+                                                                                + (document.getElementById('D1E_0').checked ? '+&D1E=1' :'')
+                                                                                + (document.getElementById('D_0').checked ? '+&D=1' :'')
+                                                                                + (document.getElementById('DE_0').checked ? '+&DE=1' :'')
+                                                                                + (document.getElementById('Tr_0').checked ? '+&Tr=1' :'')
+                                                                                + (document.getElementById('Tb_0').checked ? '+&Tb=1' :'')
+                                                                                + (document.getElementById('Tv_0').checked ? '+&Tv=1' :'')
                                                                                 ;
                                                                                 else alert('Completati Titlul, Data, Emitentul, Numarul Documentului si Tipul de document'); return false;"
                                                                         title="Adauga CPPC"><b>Adauga</b></a></div><?php endif; ?>
@@ -1288,41 +1373,588 @@ unset($_smarty_tpl_vars);
 
                                         <td colspan="6">
 
-                                            <input type="checkbox" id="AM_0" name="AM_0" value="1" />
+                                            <input type="checkbox" id="AM_0" name="AM_0" value="0" />
                                             AM&nbsp;&nbsp;
-                                            <input type="checkbox" id="A1_0" name="A1_0" value="1"/>
+                                            <input type="checkbox" id="A1_0" name="A1_0" value="0"/>
                                             A1
-                                            <input type="checkbox" id="A2_0" name="A2_0" value="1"/>
+                                            <input type="checkbox" id="A2_0" name="A2_0" value="0"/>
                                             A2
-                                            <input type="checkbox" id="A_0" name="A_0" value="1" />
+                                            <input type="checkbox" id="A_0" name="A_0" value="0" />
                                             A
-                                            <input type="checkbox" id="B1_0" name="B1_0" value="1" />
+                                            <input type="checkbox" id="B1_0" name="B1_0" value="0" />
                                             B1
-                                            <input type="checkbox" id="B_0" name="B_0" value="1" />
+                                            <input type="checkbox" id="B_0" name="B_0" value="0" />
                                             B
-                                            <input type="checkbox" id="BE_0" name="BE_0" value="1" />
+                                            <input type="checkbox" id="BE_0" name="BE_0" value="0" />
                                             BE
-                                            <input type="checkbox" id="C1_0" name="C1_0" value="1" />
+                                            <input type="checkbox" id="C1_0" name="C1_0" value="0" />
                                             C1
-                                            <input type="checkbox" id="C1E_0" name="C1E_0" value="1" />
+                                            <input type="checkbox" id="C1E_0" name="C1E_0" value="0" />
                                             C1E
-                                            <input type="checkbox" id="C_0" name="C_0" value="1" />
+                                            <input type="checkbox" id="C_0" name="C_0" value="0" />
                                             C
-                                            <input type="checkbox" id="CE_0" name="CE_0" value="1" />
+                                            <input type="checkbox" id="CE_0" name="CE_0" value="0" />
                                             CE
-                                            <input type="checkbox" id="D1_0" name="D1_0" value="1" />
+                                            <input type="checkbox" id="D1_0" name="D1_0" value="0" />
                                             D1
-                                            <input type="checkbox" id="D1E_0" name="D1E_0" value="1" />
+                                            <input type="checkbox" id="D1E_0" name="D1E_0" value="0" />
                                             D1E
-                                            <input type="checkbox" id="D_0" name="D_0" value="1" />
+                                            <input type="checkbox" id="D_0" name="D_0" value="0" />
                                             D
-                                            <input type="checkbox" id="DE_0" name="DE_0" value="1" />
+                                            <input type="checkbox" id="DE_0" name="DE_0" value="0" />
                                             DE
-                                            <input type="checkbox" id="Tr_0" name="Tr_0" value="1" />
+                                            <input type="checkbox" id="Tr_0" name="Tr_0" value="0" />
                                             Tr
-                                            <input type="checkbox" id="Tb_0" name="Tb_0" value="1" />
+                                            <input type="checkbox" id="Tb_0" name="Tb_0" value="0" />
                                             Tb
-                                            <input type="checkbox" id="Tv_0" name="Tv_0" value="1" />
+                                            <input type="checkbox" id="Tv_0" name="Tv_0" value="0" />
+                                            Tv
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </fieldset>
+                        </td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>Cartela Conducătorului Auto</legend>
+                                <table cellspacing="0" cellpadding="4">
+                                    <tr>
+                                        <td>Data Eliberării</td></td>
+                                        <td>Data expirării</td>
+                                        <td>Număr permis conducere</td>
+                                        <td>Număr certificat</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <?php if ($this->_tpl_vars['dl']): ?>
+                                        <tr>
+                                            <td colspan="6" style="color: white; background-color: grey; padding: 5px; font-size: 12px">Sectiune date curente</td>
+                                        </tr>
+                                    <?php endif; ?>
+                                    <?php $_from = $this->_tpl_vars['cca']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['item']):
+?>
+
+                                        <tr>
+                                            <td>
+                                                <input type="text" id="ReleaseDateCCA_<?php echo $this->_tpl_vars['key']; ?>
+" name="ReleaseDateCCA_<?php echo $this->_tpl_vars['key']; ?>
+" value="<?php echo ((is_array($_tmp=$this->_tpl_vars['item']['ReleaseDate'])) ? $this->_run_mod_handler('date_format', true, $_tmp, "%d.%m.%Y") : smarty_modifier_date_format($_tmp, "%d.%m.%Y")); ?>
+" class="formstyle"
+                                                       value="" size="10" maxlength="10">
+                                                <SCRIPT LANGUAGE="JavaScript" ID="js1_<?php echo $this->_tpl_vars['key']; ?>
+">
+                                                    var calrdcca_<?php echo $this->_tpl_vars['key']; ?>
+ = new CalendarPopup();
+                                                    calrdcca_<?php echo $this->_tpl_vars['key']; ?>
+.isShowNavigationDropdowns = true;
+                                                    calrdcca_<?php echo $this->_tpl_vars['key']; ?>
+.setYearSelectStartOffset(10);
+                                                    //writeSource("js1_<?php echo $this->_tpl_vars['key']; ?>
+");
+                                                </SCRIPT>
+                                                <A HREF="#" onClick="calrdcca_<?php echo $this->_tpl_vars['key']; ?>
+.select(document.getElementById('ReleaseDateCCA_<?php echo $this->_tpl_vars['key']; ?>
+'),'anchorrdcca_<?php echo $this->_tpl_vars['key']; ?>
+','dd.MM.yyyy'); return false;"
+                                                   NAME="anchorrdcca_<?php echo $this->_tpl_vars['key']; ?>
+" ID="anchorrdcca_<?php echo $this->_tpl_vars['key']; ?>
+"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                            </td>
+                                            <td>
+                                                <input type="text" id="ExpirationDateCCA_<?php echo $this->_tpl_vars['key']; ?>
+" name="ExpirationDateCCA_<?php echo $this->_tpl_vars['key']; ?>
+" value="<?php echo ((is_array($_tmp=$this->_tpl_vars['item']['ExpirationDate'])) ? $this->_run_mod_handler('date_format', true, $_tmp, "%d.%m.%Y") : smarty_modifier_date_format($_tmp, "%d.%m.%Y")); ?>
+" class="formstyle"
+                                                       value="" size="10" maxlength="10">
+                                                <SCRIPT LANGUAGE="JavaScript" ID="js1_<?php echo $this->_tpl_vars['key']; ?>
+">
+                                                    var calcpedcca_<?php echo $this->_tpl_vars['key']; ?>
+ = new CalendarPopup();
+                                                    calcpedcca_<?php echo $this->_tpl_vars['key']; ?>
+.isShowNavigationDropdowns = true;
+                                                    calcpedcca_<?php echo $this->_tpl_vars['key']; ?>
+.setYearSelectStartOffset(10);
+                                                    //writeSource("js1_<?php echo $this->_tpl_vars['key']; ?>
+");
+                                                </SCRIPT>
+                                                <A HREF="#" onClick="calcpedcca_<?php echo $this->_tpl_vars['key']; ?>
+.select(document.getElementById('ExpirationDateCCA_<?php echo $this->_tpl_vars['key']; ?>
+'),'anchorcpedcca_<?php echo $this->_tpl_vars['key']; ?>
+','dd.MM.yyyy'); return false;"
+                                                   NAME="anchorcpedcca_<?php echo $this->_tpl_vars['key']; ?>
+" ID="anchorcpedcca_<?php echo $this->_tpl_vars['key']; ?>
+"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                            </td>
+                                            <td>
+                                                <input type="text" id="DrivingLicenseNumberCCA_<?php echo $this->_tpl_vars['key']; ?>
+" name="DrivingLicenseNumberCCA_<?php echo $this->_tpl_vars['key']; ?>
+" value="<?php echo $this->_tpl_vars['item']['DrivingLicenseNumber']; ?>
+" size="20" maxlength="20">
+                                            </td>
+                                            <td>
+                                                <input type="text" id="DriverCardNumberCCA_<?php echo $this->_tpl_vars['key']; ?>
+" name="DriverCardNumberCCA_<?php echo $this->_tpl_vars['key']; ?>
+" value="<?php echo $this->_tpl_vars['item']['CardNumber']; ?>
+" size="20" maxlength="20">
+                                            </td>
+                                            <td><?php if ($this->_tpl_vars['info']['rw'] == 1): ?>
+                                                    <div id="button_mod"><a href="#"
+                                                                            onclick="if (document.getElementById('DriverCardNumberCCA_<?php echo $this->_tpl_vars['key']; ?>
+').value
+                                                                                    && document.getElementById('ReleaseDateCCA_<?php echo $this->_tpl_vars['key']; ?>
+').value
+                                                                                    && checkDate(document.getElementById('ReleaseDateCCA_<?php echo $this->_tpl_vars['key']; ?>
+').value, 'Data Eliberare')
+                                                                                    && document.getElementById('ExpirationDateCCA_<?php echo $this->_tpl_vars['key']; ?>
+').value
+                                                                                    && checkDate(document.getElementById('ExpirationDateCCA_<?php echo $this->_tpl_vars['key']; ?>
+').value, 'Data Expirare'))
+                                                                                    window.location.href = './?m=persons&o=editprof&PersonID=<?php echo $_GET['PersonID']; ?>
+&action=editCCA&Id=<?php echo $this->_tpl_vars['key']; ?>
+&ReleaseDate='
+                                                                                    + document.getElementById('ReleaseDateCCA_<?php echo $this->_tpl_vars['key']; ?>
+').value
+                                                                                    + '&ExpirationDate=' + escape(document.getElementById('ExpirationDateCCA_<?php echo $this->_tpl_vars['key']; ?>
+').value)
+                                                                                    + '&DrivingLicenseNumber=' + escape(document.getElementById('DrivingLicenseNumberCCA_<?php echo $this->_tpl_vars['key']; ?>
+').value)
+                                                                                    + '&CardNumber=' + escape(document.getElementById('DriverCardNumberCCA_<?php echo $this->_tpl_vars['key']; ?>
+').value)
+                                                                                    ;
+                                                                                    else alert('Va rugam sa completati toate informatiile'); return false;"
+                                                                            title="Modifica Cartela Conducator Auto"><b>Mod</b></a></div><?php endif; ?>
+                                            </td>
+                                            <td><?php if ($this->_tpl_vars['info']['rw'] == 1): ?>
+                                                    <div id="button_del"><a href="#"
+                                                                            onclick="if (confirm('<?php echo smarty_function_translate(array('label' => 'Sunteti sigur(a)?'), $this);?>
+')) window.location.href = './?m=persons&o=editprof&PersonID=<?php echo $_GET['PersonID']; ?>
+&action=delCCA&Id=<?php echo $this->_tpl_vars['key']; ?>
+'; return false;"
+                                                                            title="<?php echo smarty_function_translate(array('label' => 'Sterge Certificat'), $this);?>
+"><b>Del</b></a></div><?php endif; ?></td>
+                                        </tr>
+
+                                    <?php endforeach; endif; unset($_from); ?>
+                                    <tr>
+                                        <td colspan="5" style="color: white; background-color: green; padding: 5px; font-size: 12px">Sectiune adaugare Inregistrare noua</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" id="ReleaseDateCCA_0" name="ReleaseDateCCA_0" class="formstyle" value="" size="10" maxlength="10">
+                                            <SCRIPT LANGUAGE="JavaScript" ID="js1_0">
+                                                var calRDCCA_0 = new CalendarPopup();
+                                                calRDCCA_0.isShowNavigationDropdowns = true;
+                                                calRDCCA_0.setYearSelectStartOffset(10);
+                                                //writeSource("js1_0");
+                                            </SCRIPT>
+                                            <A HREF="#" onClick="calRDCCA_0.select(document.getElementById('ReleaseDateCCA_0'),'anchorRDCCA_0','dd.MM.yyyy'); return false;" NAME="anchorRDCCA_0"
+                                               ID="anchorRDCCA_0"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                        </td>
+                                        <td>
+                                            <input type="text" id="ExpirationDateCCA_0" name="ExpirationDateCCA_0" class="formstyle" value="" size="10" maxlength="10">
+                                            <SCRIPT LANGUAGE="JavaScript" ID="js1_0">
+                                                var calEDCCA_0 = new CalendarPopup();
+                                                calEDCCA_0.isShowNavigationDropdowns = true;
+                                                calEDCCA_0.setYearSelectStartOffset(10);
+                                                //writeSource("js1_0");
+                                            </SCRIPT>
+                                            <A HREF="#" onClick="calEDCCA_0.select(document.getElementById('ExpirationDateCCA_0'),'anchorEDCCA_0','dd.MM.yyyy'); return false;" NAME="anchorEDCCA_0"
+                                               ID="anchorEDCCA_0"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                        </td>
+                                        <td><input type="text" id="DrivingLicenseNumberCCA_0" name="DrivingLicenseNumberCCA_0" size="20" maxlength="20"></td>
+                                        <td><input type="text" id="DriverCardNumberCCA_0" name="DriverCardNumberCCA_0" size="20" maxlength="20"></td>
+                                        <td colspan="2">
+                                            <?php if ($this->_tpl_vars['info']['rw'] == 1): ?>
+                                                <div id="button_add"><a href="#"
+                                                                        onclick="if (document.getElementById('DrivingLicenseNumberCCA_0').value
+                                                                                && document.getElementById('ReleaseDateCCA_0').value
+                                                                                && checkDate(document.getElementById('ReleaseDateCCA_0').value, 'Data Eliberare')
+                                                                                && document.getElementById('ExpirationDateCCA_0').value
+                                                                                && checkDate(document.getElementById('ExpirationDateCCA_0').value, 'Data Expirare'))
+                                                                                window.location.href = './?m=persons&o=editprof&PersonID=<?php echo $_GET['PersonID']; ?>
+&action=newCCA&DrivingLicenseNumber='
+                                                                                + escape(document.getElementById('DrivingLicenseNumberCCA_0').value)
+                                                                                + '&ReleaseDate=' + escape(document.getElementById('ReleaseDateCCA_0').value)
+                                                                                + '&ExpirationDate=' + escape(document.getElementById('ExpirationDateCCA_0').value)
+                                                                                + '&CardNumber=' + document.getElementById('DriverCardNumberCCA_0').value
+                                                                                ;
+                                                                                else alert('Completati Data Emiterii, Data Expirarii, Numar permis auto'); return false;"
+                                                                        title="Adauga CPPC"><b>Adauga</b></a></div><?php endif; ?>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                        </td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>Permise Auto</legend>
+                                <table cellspacing="0" cellpadding="4">
+                                    <tr>
+                                        <td>Data Eliberării</td></td>
+                                        <td>Data expirării</td>
+                                        <td>Număr permis conducere</td>
+                                        <td>Emitent</td>
+                                        <td>Restrictii</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <?php if ($this->_tpl_vars['dl']): ?>
+                                        <tr>
+                                            <td colspan="7" style="color: white; background-color: grey; padding: 5px; font-size: 12px">Sectiune date curente</td>
+                                        </tr>
+                                    <?php endif; ?>
+                                    <?php $_from = $this->_tpl_vars['dl']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['item']):
+?>
+
+                                        <tr>
+                                            <td>
+                                                <input type="text" id="ReleaseDateDL_<?php echo $this->_tpl_vars['key']; ?>
+" name="ReleaseDateDL_<?php echo $this->_tpl_vars['key']; ?>
+" value="<?php echo ((is_array($_tmp=$this->_tpl_vars['item']['ReleaseDate'])) ? $this->_run_mod_handler('date_format', true, $_tmp, "%d.%m.%Y") : smarty_modifier_date_format($_tmp, "%d.%m.%Y")); ?>
+" class="formstyle"
+                                                       value="" size="10" maxlength="10">
+                                                <SCRIPT LANGUAGE="JavaScript" ID="js1_<?php echo $this->_tpl_vars['key']; ?>
+">
+                                                    var calrdDL_<?php echo $this->_tpl_vars['key']; ?>
+ = new CalendarPopup();
+                                                    calrdDL_<?php echo $this->_tpl_vars['key']; ?>
+.isShowNavigationDropdowns = true;
+                                                    calrdDL_<?php echo $this->_tpl_vars['key']; ?>
+.setYearSelectStartOffset(10);
+                                                    //writeSource("js1_<?php echo $this->_tpl_vars['key']; ?>
+");
+                                                </SCRIPT>
+                                                <A HREF="#" onClick="calrdDL_<?php echo $this->_tpl_vars['key']; ?>
+.select(document.getElementById('ReleaseDateDL_<?php echo $this->_tpl_vars['key']; ?>
+'),'anchorrdDL_<?php echo $this->_tpl_vars['key']; ?>
+','dd.MM.yyyy'); return false;"
+                                                   NAME="anchorrdDL_<?php echo $this->_tpl_vars['key']; ?>
+" ID="anchorrdDL_<?php echo $this->_tpl_vars['key']; ?>
+"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                            </td>
+                                            <td>
+                                                <input type="text" id="ExpirationDateDL_<?php echo $this->_tpl_vars['key']; ?>
+" name="ExpirationDateDL_<?php echo $this->_tpl_vars['key']; ?>
+" value="<?php echo ((is_array($_tmp=$this->_tpl_vars['item']['ExpirationDate'])) ? $this->_run_mod_handler('date_format', true, $_tmp, "%d.%m.%Y") : smarty_modifier_date_format($_tmp, "%d.%m.%Y")); ?>
+" class="formstyle"
+                                                       value="" size="10" maxlength="10">
+                                                <SCRIPT LANGUAGE="JavaScript" ID="js1_<?php echo $this->_tpl_vars['key']; ?>
+">
+                                                    var calcpedDL_<?php echo $this->_tpl_vars['key']; ?>
+ = new CalendarPopup();
+                                                    calcpedDL_<?php echo $this->_tpl_vars['key']; ?>
+.isShowNavigationDropdowns = true;
+                                                    calcpedDL_<?php echo $this->_tpl_vars['key']; ?>
+.setYearSelectStartOffset(10);
+                                                    //writeSource("js1_<?php echo $this->_tpl_vars['key']; ?>
+");
+                                                </SCRIPT>
+                                                <A HREF="#" onClick="calcpedDL_<?php echo $this->_tpl_vars['key']; ?>
+.select(document.getElementById('ExpirationDateDL_<?php echo $this->_tpl_vars['key']; ?>
+'),'anchorcpedDL_<?php echo $this->_tpl_vars['key']; ?>
+','dd.MM.yyyy'); return false;"
+                                                   NAME="anchorcpedDL_<?php echo $this->_tpl_vars['key']; ?>
+" ID="anchorcpedDL_<?php echo $this->_tpl_vars['key']; ?>
+"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                            </td>
+                                            <td>
+                                                <input type="text" id="DrivingLicenseNumberDL_<?php echo $this->_tpl_vars['key']; ?>
+" name="DrivingLicenseNumberDL_<?php echo $this->_tpl_vars['key']; ?>
+" value="<?php echo $this->_tpl_vars['item']['DrivingLicenseNumber']; ?>
+" size="20" maxlength="20">
+                                            </td>
+                                            <td>
+                                                <input type="text" id="IssuerDL_<?php echo $this->_tpl_vars['key']; ?>
+" name="IssuerDL_<?php echo $this->_tpl_vars['key']; ?>
+" value="<?php echo $this->_tpl_vars['item']['Issuer']; ?>
+" size="20" maxlength="20">
+                                            </td>
+                                            <td>
+                                                <input type="text" id="RestrictionsDL_<?php echo $this->_tpl_vars['key']; ?>
+" name="RestrictionsDL_<?php echo $this->_tpl_vars['key']; ?>
+" value="<?php echo $this->_tpl_vars['item']['Restrictions']; ?>
+" size="50" maxlength="50">
+                                            </td>
+                                            <td><?php if ($this->_tpl_vars['info']['rw'] == 1): ?>
+                                                    <div id="button_mod"><a href="#"
+                                                                            onclick="if (document.getElementById('DrivingLicenseNumberDL_<?php echo $this->_tpl_vars['key']; ?>
+').value
+                                                                                    && document.getElementById('IssuerDL_<?php echo $this->_tpl_vars['key']; ?>
+').value
+                                                                                    && document.getElementById('ReleaseDateDL_<?php echo $this->_tpl_vars['key']; ?>
+').value
+                                                                                    && checkDate(document.getElementById('ReleaseDateDL_<?php echo $this->_tpl_vars['key']; ?>
+').value, 'Data Eliberare')
+                                                                                    && document.getElementById('ExpirationDateDL_<?php echo $this->_tpl_vars['key']; ?>
+').value
+                                                                                    && checkDate(document.getElementById('ExpirationDateDL_<?php echo $this->_tpl_vars['key']; ?>
+').value, 'Data Expirare'))
+                                                                                    window.location.href = './?m=persons&o=editprof&PersonID=<?php echo $_GET['PersonID']; ?>
+&action=editDL&Id=<?php echo $this->_tpl_vars['key']; ?>
+&ReleaseDate='
+                                                                                    + document.getElementById('ReleaseDateDL_<?php echo $this->_tpl_vars['key']; ?>
+').value
+                                                                                    + '&ExpirationDate=' + escape(document.getElementById('ExpirationDateDL_<?php echo $this->_tpl_vars['key']; ?>
+').value)
+                                                                                    + '&DrivingLicenseNumber=' + escape(document.getElementById('DrivingLicenseNumberDL_<?php echo $this->_tpl_vars['key']; ?>
+').value)
+                                                                                    + '&Issuer=' + escape(document.getElementById('IssuerDL_<?php echo $this->_tpl_vars['key']; ?>
+').value)
+                                                                                    + '&Restrictions=' + escape(document.getElementById('RestrictionsDL_<?php echo $this->_tpl_vars['key']; ?>
+').value)
+                                                                                    + (document.getElementById('AMDL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&AM=1' :'')
+                                                                                    + (document.getElementById('A1DL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&A1=1' :'')
+                                                                                    + (document.getElementById('A2DL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&A2=1' :'')
+                                                                                    + (document.getElementById('ADL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&A=1' :'')
+                                                                                    + (document.getElementById('B1DL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&B1=1' :'')
+                                                                                    + (document.getElementById('BDL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&B=1' :'')
+                                                                                    + (document.getElementById('BEDL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&BE=1' :'')
+                                                                                    + (document.getElementById('C1DL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&C1=1' :'')
+                                                                                    + (document.getElementById('C1EDL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&C1E=1' :'')
+                                                                                    + (document.getElementById('CDL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&C=1' :'')
+                                                                                    + (document.getElementById('CEDL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&CE=1' :'')
+                                                                                    + (document.getElementById('D1DL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&D1=1' :'')
+                                                                                    + (document.getElementById('D1EDL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&D1E=1' :'')
+                                                                                    + (document.getElementById('DDL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&D=1' :'')
+                                                                                    + (document.getElementById('DEDL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&DE=1' :'')
+                                                                                    + (document.getElementById('TrDL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&Tr=1' :'')
+                                                                                    + (document.getElementById('TbDL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&Tb=1' :'')
+                                                                                    + (document.getElementById('TvDL_<?php echo $this->_tpl_vars['key']; ?>
+').checked ? '+&Tv=1' :'')
+                                                                                    ;
+                                                                                    else alert('Va rugam sa completati toate informatiile'); return false;"
+                                                                            title="Modifica Permis de Conducere"><b>Mod</b></a></div><?php endif; ?>
+                                            </td>
+                                            <td><?php if ($this->_tpl_vars['info']['rw'] == 1): ?>
+                                                    <div id="button_del"><a href="#"
+                                                                            onclick="if (confirm('<?php echo smarty_function_translate(array('label' => 'Sunteti sigur(a)?'), $this);?>
+')) window.location.href = './?m=persons&o=editprof&PersonID=<?php echo $_GET['PersonID']; ?>
+&action=delDL&Id=<?php echo $this->_tpl_vars['key']; ?>
+'; return false;"
+                                                                            title="<?php echo smarty_function_translate(array('label' => 'Sterge Permis de Conducere'), $this);?>
+"><b>Del</b></a></div><?php endif; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6">Categorii de vehicule</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6">
+
+                                                <input type="checkbox" id="AMDL_<?php echo $this->_tpl_vars['key']; ?>
+" name="AMDL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['AM'] == 1 )): ?> checked <?php endif; ?> />
+                                                AM&nbsp;&nbsp;
+                                                <input type="checkbox" id="A1DL_<?php echo $this->_tpl_vars['key']; ?>
+" name="A1DL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['A1'] == 1 )): ?> checked <?php endif; ?>/>
+                                                A1
+                                                <input type="checkbox" id="A2DL_<?php echo $this->_tpl_vars['key']; ?>
+" name="A2DL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['A2'] == 1 )): ?> checked <?php endif; ?>/>
+                                                A2
+                                                <input type="checkbox" id="ADL_<?php echo $this->_tpl_vars['key']; ?>
+" name="ADL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['A'] == 1 )): ?> checked <?php endif; ?> />
+                                                A
+                                                <input type="checkbox" id="B1DL_<?php echo $this->_tpl_vars['key']; ?>
+" name="B1DL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['B1'] == 1 )): ?> checked <?php endif; ?> />
+                                                B1
+                                                <input type="checkbox" id="BDL_<?php echo $this->_tpl_vars['key']; ?>
+" name="BDL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['B'] == 1 )): ?> checked <?php endif; ?> />
+                                                B
+                                                <input type="checkbox" id="BEDL_<?php echo $this->_tpl_vars['key']; ?>
+" name="BEDL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['BE'] == 1 )): ?> checked <?php endif; ?> />
+                                                BE
+                                                <input type="checkbox" id="C1DL_<?php echo $this->_tpl_vars['key']; ?>
+" name="C1DL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['C1'] == 1 )): ?> checked <?php endif; ?> />
+                                                C1
+                                                <input type="checkbox" id="C1EDL_<?php echo $this->_tpl_vars['key']; ?>
+" name="C1EDL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['C1E'] == 1 )): ?> checked <?php endif; ?> />
+                                                C1E
+                                                <input type="checkbox" id="CDL_<?php echo $this->_tpl_vars['key']; ?>
+" name="CDL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['C'] == 1 )): ?> checked <?php endif; ?> />
+                                                C
+                                                <input type="checkbox" id="CEDL_<?php echo $this->_tpl_vars['key']; ?>
+" name="CEDL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['CE'] == 1 )): ?> checked <?php endif; ?> />
+                                                CE
+                                                <input type="checkbox" id="D1DL_<?php echo $this->_tpl_vars['key']; ?>
+" name="D1DL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['D1'] == 1 )): ?> checked <?php endif; ?> />
+                                                D1
+                                                <input type="checkbox" id="D1EDL_<?php echo $this->_tpl_vars['key']; ?>
+" name="D1EDL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['D1E'] == 1 )): ?> checked <?php endif; ?> />
+                                                D1E
+                                                <input type="checkbox" id="DDL_<?php echo $this->_tpl_vars['key']; ?>
+" name="DDL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['D'] == 1 )): ?> checked <?php endif; ?> />
+                                                D
+                                                <input type="checkbox" id="DEDL_<?php echo $this->_tpl_vars['key']; ?>
+" name="DEDL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['DE'] == 1 )): ?> checked <?php endif; ?> />
+                                                DE
+                                                <input type="checkbox" id="TrDL_<?php echo $this->_tpl_vars['key']; ?>
+" name="TrDL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['Tr'] == 1 )): ?> checked <?php endif; ?> />
+                                                Tr
+                                                <input type="checkbox" id="TbDL_<?php echo $this->_tpl_vars['key']; ?>
+" name="TbDL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['Tb'] == 1 )): ?> checked <?php endif; ?> />
+                                                Tb
+                                                <input type="checkbox" id="TvDL_<?php echo $this->_tpl_vars['key']; ?>
+" name="TvDL_<?php echo $this->_tpl_vars['key']; ?>
+" value="1" <?php if (( $this->_tpl_vars['item']['Tv'] == 1 )): ?> checked <?php endif; ?> />
+                                                Tv
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; endif; unset($_from); ?>
+                                    <tr>
+                                        <td colspan="6" style="color: white; background-color: green; padding: 5px; font-size: 12px">Sectiune adaugare Inregistrare noua</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" id="ReleaseDateDL_0" name="ReleaseDateDL_0" class="formstyle" value="" size="10" maxlength="10">
+                                            <SCRIPT LANGUAGE="JavaScript" ID="js1_0">
+                                                var calRDDL_0 = new CalendarPopup();
+                                                calRDDL_0.isShowNavigationDropdowns = true;
+                                                calRDDL_0.setYearSelectStartOffset(10);
+                                                //writeSource("js1_0");
+                                            </SCRIPT>
+                                            <A HREF="#" onClick="calRDDL_0.select(document.getElementById('ReleaseDateDL_0'),'anchorRDDL_0','dd.MM.yyyy'); return false;" NAME="anchorRDDL_0"
+                                               ID="anchorRDDL_0"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                        </td>
+                                        <td>
+                                            <input type="text" id="ExpirationDateDL_0" name="ExpirationDateDL_0" class="formstyle" value="" size="10" maxlength="10">
+                                            <SCRIPT LANGUAGE="JavaScript" ID="js1_0">
+                                                var calEDDL_0 = new CalendarPopup();
+                                                calEDDL_0.isShowNavigationDropdowns = true;
+                                                calEDDL_0.setYearSelectStartOffset(10);
+                                                //writeSource("js1_0");
+                                            </SCRIPT>
+                                            <A HREF="#" onClick="calEDDL_0.select(document.getElementById('ExpirationDateDL_0'),'anchorEDDL_0','dd.MM.yyyy'); return false;" NAME="anchorEDDL_0"
+                                               ID="anchorEDDL_0"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                        </td>
+                                        <td><input type="text" id="DrivingLicenseNumberDL_0" name="DrivingLicenseNumberDL_0" size="20" maxlength="20"></td>
+                                        <td><input type="text" id="IssuerDL_0" name="IssuerDL_0" size="20" maxlength="20"></td>
+                                        <td><input type="text" id="RestrictionsDL_0" name="RestrictionsDL_0" size="50" maxlength="50"></td>
+                                        <td colspan="2">
+                                            <?php if ($this->_tpl_vars['info']['rw'] == 1): ?>
+                                                <div id="button_add"><a href="#"
+                                                                        onclick="if (document.getElementById('DrivingLicenseNumberDL_0').value
+                                                                                && document.getElementById('ReleaseDateDL_0').value
+                                                                                && checkDate(document.getElementById('ReleaseDateDL_0').value, 'Data Eliberare')
+                                                                                && document.getElementById('ExpirationDateDL_0').value
+                                                                                && checkDate(document.getElementById('ExpirationDateDL_0').value, 'Data Expirare')
+                                                                                && document.getElementById('IssuerDL_0').value)
+                                                                                window.location.href = './?m=persons&o=editprof&PersonID=<?php echo $_GET['PersonID']; ?>
+&action=newDL&DrivingLicenseNumber='
+                                                                                + escape(document.getElementById('DrivingLicenseNumberDL_0').value)
+                                                                                + '&ReleaseDate=' + escape(document.getElementById('ReleaseDateDL_0').value)
+                                                                                + '&ExpirationDate=' + escape(document.getElementById('ExpirationDateDL_0').value)
+                                                                                + '&Issuer=' + document.getElementById('IssuerDL_0').value
+                                                                                + '&Restrictions=' + document.getElementById('RestrictionsDL_0').value
+                                                                                + (document.getElementById('AMDL_0').checked ? '+&AM=1' :'')
+                                                                                + (document.getElementById('A1DL_0').checked ? '+&A1=1' :'')
+                                                                                + (document.getElementById('A2DL_0').checked ? '+&A2=1' :'')
+                                                                                + (document.getElementById('ADL_0').checked ? '+&A=1' :'')
+                                                                                + (document.getElementById('B1DL_0').checked ? '+&B1=1' :'')
+                                                                                + (document.getElementById('BDL_0').checked ? '+&B=1' :'')
+                                                                                + (document.getElementById('BEDL_0').checked ? '+&BE=1' :'')
+                                                                                + (document.getElementById('C1DL_0').checked ? '+&C1=1' :'')
+                                                                                + (document.getElementById('C1EDL_0').checked ? '+&C1E=1' :'')
+                                                                                + (document.getElementById('CDL_0').checked ? '+&C=1' :'')
+                                                                                + (document.getElementById('CEDL_0').checked ? '+&CE=1' :'')
+                                                                                + (document.getElementById('D1DL_0').checked ? '+&D1=1' :'')
+                                                                                + (document.getElementById('D1EDL_0').checked ? '+&D1E=1' :'')
+                                                                                + (document.getElementById('DDL_0').checked ? '+&D=1' :'')
+                                                                                + (document.getElementById('DEDL_0').checked ? '+&DE=1' :'')
+                                                                                + (document.getElementById('TrDL_0').checked ? '+&Tr=1' :'')
+                                                                                + (document.getElementById('TbDL_0').checked ? '+&Tb=1' :'')
+                                                                                + (document.getElementById('TvDL_0').checked ? '+&Tv=1' :'')
+                                                                                ;
+                                                                                else alert('Completati T Data Emitere, Data Expirare, Emitentul, Numarul Permisului de conducere'); return false;"
+                                                                        title="Adauga CPPC"><b>Adauga</b></a></div><?php endif; ?>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">Categorii de vehicule</td>
+                                    </tr>
+                                    <tr>
+
+                                        <td colspan="6">
+
+                                            <input type="checkbox" id="AMDL_0" name="AMDL_0" value="0" />
+                                            AM&nbsp;&nbsp;
+                                            <input type="checkbox" id="A1DL_0" name="A1DL_0" value="0"/>
+                                            A1
+                                            <input type="checkbox" id="A2DL_0" name="A2DL_0" value="0"/>
+                                            A2
+                                            <input type="checkbox" id="ADL_0" name="ADL_0" value="0" />
+                                            A
+                                            <input type="checkbox" id="B1DL_0" name="B1_0" value="0" />
+                                            B1
+                                            <input type="checkbox" id="BDL_0" name="BDL_0" value="0" />
+                                            B
+                                            <input type="checkbox" id="BEDL_0" name="BEDL_0" value="0" />
+                                            BE
+                                            <input type="checkbox" id="C1DL_0" name="C1DL_0" value="0" />
+                                            C1
+                                            <input type="checkbox" id="C1EDL_0" name="C1EDL_0" value="0" />
+                                            C1E
+                                            <input type="checkbox" id="CDL_0" name="CDL_0" value="0" />
+                                            C
+                                            <input type="checkbox" id="CEDL_0" name="CEDL_0" value="0" />
+                                            CE
+                                            <input type="checkbox" id="D1DL_0" name="D1DL_0" value="0" />
+                                            D1
+                                            <input type="checkbox" id="D1EDL_0" name="D1EDL_0" value="0" />
+                                            D1E
+                                            <input type="checkbox" id="DDL_0" name="DDL_0" value="0" />
+                                            D
+                                            <input type="checkbox" id="DEDL_0" name="DEDL_0" value="0" />
+                                            DE
+                                            <input type="checkbox" id="TrDL_0" name="TrDL_0" value="0" />
+                                            Tr
+                                            <input type="checkbox" id="TbDL_0" name="TbDL_0" value="0" />
+                                            Tb
+                                            <input type="checkbox" id="TvDL_0" name="TvDL_0" value="0" />
                                             Tv
                                         </td>
                                     </tr>
@@ -1341,6 +1973,7 @@ unset($_smarty_tpl_vars);
 </span></td>
     </tr>
 </table>
+
 
 <?php echo '
 <script type="text/javascript">
@@ -1363,6 +1996,7 @@ unset($_smarty_tpl_vars);
         return true;
     }
 </script>
+
 '; ?>
 
 

@@ -285,6 +285,8 @@ switch ($o) {
             'medDocsNew' => $person->getMedicalDocsNew(),
             'psyDocsNew' => $person->getPsichologicalDocsNew(),
             'cppc' => $person->getCPPC(),
+            'cca' => $person->getCCA(),
+            'dl' => $person->getDL(),
             'years' => range(0, 45),
             'months' => range(0, 12),
             'days' => range(0, 31)

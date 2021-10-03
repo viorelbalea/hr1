@@ -2926,12 +2926,15 @@ class Person extends ConfigData
             global $conn;
 
         if (!empty($_GET['action'])) {
+
             foreach ($_GET as &$v) {
                 if (!is_numeric($v) && !is_array($v)) {
                     $v = Utils::formatStr($v);
                 }
             }
             switch ($_GET['action']) {
+
+                /// +++++ Persons Certificate - depricated??? +++++ ///
                 case 'new':
                     $conn->query("INSERT INTO persons_certif(UserID, PersonID, CertifName, CertifEmitent, CertifSerie, 
                            CertifNo, NrCopiiPlasament, TipNevoiCopil, StartDate, StopDate, Type, CreateDate)
@@ -2954,6 +2957,8 @@ class Person extends ConfigData
                 case 'del':
                     $conn->query("DELETE FROM persons_certif WHERE CertifID = {$_GET['CertifID']} AND PersonID = {$this->PersonID}");
                     break;
+
+                /// +++++ Persons Medical Docs +++++ ///
                 case 'newmedical':
                     $conn->query("INSERT INTO persons_medical_docs(
                                 UserID
@@ -2992,6 +2997,8 @@ class Person extends ConfigData
                 case 'delnewmedical':
                     $conn->query("DELETE FROM persons_medical_docs WHERE Id = {$_GET['Id']} AND PersonID = {$this->PersonID}");
                     break;
+
+                /// +++++ Persons Psichological Docs +++++ ///
                 case 'newpsychological':
                     $conn->query("INSERT INTO persons_psychological_docs(
                                 UserID
@@ -3031,6 +3038,7 @@ class Person extends ConfigData
                     $conn->query("DELETE FROM persons_psychological_docs WHERE Id = {$_GET['Id']} AND PersonID = {$this->PersonID}");
                     break;
 
+                /// +++++ Persons Driver Certificate +++++ ///
                 case 'newCPPC':
                     $conn->query("INSERT INTO persons_driver_certificates(
                                 UserID
@@ -3086,6 +3094,155 @@ class Person extends ConfigData
     				                     , CURRENT_TIMESTAMP)");
                     break;
 
+                case 'editCPPC':
+                    $conn->query("UPDATE persons_driver_certificates SET
+    				                     ReleaseDate    = '" . Utils::toDBDate($_GET['ReleaseDate']) . "',
+                                         ExpirationDate     = '" . Utils::toDBDate($_GET['ExpirationDate']) . "',
+                                         DrivingLicenseNumber = '{$_GET['DrivingLicenseNumber']}',
+                                         CertificateNumber      = '{$_GET['CertificateNumber']}',
+                                    	 AM      = '{$_GET['AM']}',
+    				                     A1      = '{$_GET['A1']}',
+    				                     A2      = '{$_GET['A1']}',				                     
+    				                     A      = '{$_GET['A']}',				                     
+    				                     B1      = '{$_GET['B1']}',				                     
+    				                     B      = '{$_GET['B']}',				                     
+    				                     BE      = '{$_GET['BE']}',				                     
+    				                     C1      = '{$_GET['C1']}',				                     
+    				                     C1E      = '{$_GET['C1E']}',				                     
+    				                     C      = '{$_GET['C']}',				                     
+    				                     CE      = '{$_GET['CE']}',				                     
+    				                     D1      = '{$_GET['D1']}',				                     
+    				                     D1E      = '{$_GET['D1E']}',				                     
+    				                     D      = '{$_GET['D']}',				                     
+    				                     DE      = '{$_GET['DE']}',				                     
+    				                     Tr      = '{$_GET['Tr']}',				                     
+    				                     Tb      = '{$_GET['Tb']}',				                     
+    				                     Tv      = '{$_GET['Tv']}'				                     
+    				              WHERE  Id = {$_GET['Id']} AND PersonID = {$this->PersonID}");
+                    break;
+                case 'delCPPC':
+                    $conn->query("DELETE FROM persons_driver_certificates WHERE Id = {$_GET['Id']} AND PersonID = {$this->PersonID}");
+                    break;
+
+                /// +++++ Persons Driver Cards +++++ ///
+                case 'newCCA':
+                    $conn->query("INSERT INTO persons_driver_cards(
+                                UserID
+                                , PersonID
+                                , ReleaseDate
+                                , ExpirationDate
+                                , DrivingLicenseNumber
+                                , CardNumber
+                                , CreateDate)
+    				              VALUES(
+    				                     {$_SESSION['USER_ID']}
+    				                     , {$this->PersonID}
+    				                     , '{$_GET['ReleaseDate']}'
+    				                     , '{$_GET['ExpirationDate']}'
+    				                     , '{$_GET['DrivingLicenseNumber']}'
+    				                     , '{$_GET['CardNumber']}'
+    				                     , CURRENT_TIMESTAMP)");
+                    break;
+                case 'editCCA':
+                    $conn->query("UPDATE persons_driver_cards SET
+    				                     ReleaseDate    = '" . Utils::toDBDate($_GET['ReleaseDate']) . "',
+                                         ExpirationDate     = '" . Utils::toDBDate($_GET['ExpirationDate']) . "',
+                                         DrivingLicenseNumber = '{$_GET['DrivingLicenseNumber']}',
+                                         CardNumber      = '{$_GET['CardNumber']}'			                     
+    				              WHERE  Id = {$_GET['Id']} AND PersonID = {$this->PersonID}");
+                    break;
+                case 'delCCA':
+                    $conn->query("DELETE FROM persons_driver_cards WHERE Id = {$_GET['Id']} AND PersonID = {$this->PersonID}");
+                    break;
+
+                /// +++++ Persons Driver Licenses +++++ ///
+                case 'newDL':
+                    $conn->query("INSERT INTO persons_driver_licenses(
+                                UserID
+                                , PersonID
+                                , ReleaseDate
+                                , ExpirationDate
+                                , DrivingLicenseNumber
+                                , Issuer
+                                , Restrictions
+                                , AM
+                                , A1
+                                , A2
+                                , A                                
+                                , B1
+                                , B
+                                , BE
+                                , C1
+                                , C1E
+                                , C
+                                , CE
+                                , D1
+                                , D1E
+                                , D
+                                , DE
+                                , Tr
+                                , Tb
+                                , Tv
+                                , CreateDate)
+    				              VALUES(
+    				                     {$_SESSION['USER_ID']}
+    				                     , {$this->PersonID}
+    				                     , '{$_GET['ReleaseDate']}'
+    				                     , '{$_GET['ExpirationDate']}'
+    				                     , '{$_GET['DrivingLicenseNumber']}'
+    				                     , '{$_GET['Issuer']}'
+    				                     , '{$_GET['Restrictions']}'
+    				                     , '{$_GET['AM']}'
+    				                     , '{$_GET['A1']}'
+    				                     , '{$_GET['A2']}'
+    				                     , '{$_GET['A']}'
+    				                     , '{$_GET['B1']}'
+    				                     , '{$_GET['B']}'
+    				                     , '{$_GET['BE']}'
+    				                     , '{$_GET['C1']}'
+    				                     , '{$_GET['C1E']}'
+    				                     , '{$_GET['C']}'
+    				                     , '{$_GET['CE']}'
+    				                     , '{$_GET['D1']}'
+    				                     , '{$_GET['D1E']}'
+    				                     , '{$_GET['D']}'
+    				                     , '{$_GET['DE']}'
+    				                     , '{$_GET['Tr']}'
+    				                     , '{$_GET['Tb']}'
+    				                     , '{$_GET['Tv']}'
+    				                     , CURRENT_TIMESTAMP)");
+                    break;
+
+                case 'editDL':
+                    $conn->query("UPDATE persons_driver_licenses SET
+    				                     ReleaseDate    = '" . Utils::toDBDate($_GET['ReleaseDate']) . "',
+                                         ExpirationDate     = '" . Utils::toDBDate($_GET['ExpirationDate']) . "',
+                                         DrivingLicenseNumber = '{$_GET['DrivingLicenseNumber']}',
+                                         Issuer      = '{$_GET['Issuer']}',
+                                         Restrictions      = '{$_GET['Restrictions']}',
+                                    	 AM      = '{$_GET['AM']}',
+    				                     A1      = '{$_GET['A1']}',
+    				                     A2      = '{$_GET['A1']}',				                     
+    				                     A      = '{$_GET['A']}',				                     
+    				                     B1      = '{$_GET['B1']}',				                     
+    				                     B      = '{$_GET['B']}',				                     
+    				                     BE      = '{$_GET['BE']}',				                     
+    				                     C1      = '{$_GET['C1']}',				                     
+    				                     C1E      = '{$_GET['C1E']}',				                     
+    				                     C      = '{$_GET['C']}',				                     
+    				                     CE      = '{$_GET['CE']}',				                     
+    				                     D1      = '{$_GET['D1']}',				                     
+    				                     D1E      = '{$_GET['D1E']}',				                     
+    				                     D      = '{$_GET['D']}',				                     
+    				                     DE      = '{$_GET['DE']}',				                     
+    				                     Tr      = '{$_GET['Tr']}',				                     
+    				                     Tb      = '{$_GET['Tb']}',				                     
+    				                     Tv      = '{$_GET['Tv']}'				                     
+    				              WHERE  Id = {$_GET['Id']} AND PersonID = {$this->PersonID}");
+                    break;
+                case 'delDL':
+                    $conn->query("DELETE FROM persons_driver_licenses WHERE Id = {$_GET['Id']} AND PersonID = {$this->PersonID}");
+                    break;
             }
             header('Location: ./?m=persons&o=editprof&PersonID=' . $this->PersonID);
             exit;
@@ -3685,6 +3842,31 @@ class Person extends ConfigData
         return $cppc;
     }
 
+    public function getCCA()
+    {
+
+        global $conn;
+
+        $conn->query("SELECT * FROM persons_driver_cards WHERE PersonID = {$this->PersonID} ORDER BY ReleaseDate");
+        $cca = array();
+        while ($row = $conn->fetch_array()) {
+            $cca[$row['Id']] = $row;
+        }
+        return $cca;
+    }
+
+    public function getDl()
+    {
+
+        global $conn;
+
+        $conn->query("SELECT * FROM persons_driver_licenses WHERE PersonID = {$this->PersonID} ORDER BY ReleaseDate");
+        $dl = array();
+        while ($row = $conn->fetch_array()) {
+            $dl[$row['Id']] = $row;
+        }
+        return $dl;
+    }
     public function getChildren()
     {
 

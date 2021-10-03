@@ -130,6 +130,7 @@
                                 <input type="hidden" name="days" value="{$info.days}">
                             </td>
                         </tr>
+                        <!--
                         <tr>
                             <td><b>{translate label='Permis auto'}:</b></td>
                             <td>
@@ -207,6 +208,7 @@
                             <td><b>{translate label='Observatii permis'}:</b></td>
                             <td><input type="text" name="DrivingNotes" value="{$info.DrivingNotes|default:''}" size="40" maxlength="255"></td>
                         </tr>
+                        -->
                         <tr>
                             <td><b>{translate label='Observatii'}:</b></td>
                             <td><textarea name="ProfNotes" rows="8" cols="50">{$info.ProfNotes}</textarea></td>
@@ -245,14 +247,14 @@
                                             <td>
                                                 <input type="text" id="CertifStartDate_{$key}" name="StartDate_{$key}" value="{$item.StartDate|date_format:"%d.%m.%Y"}" class="formstyle"
                                                        value="" size="10" maxlength="10">
-                                                <SCRIPT LANGUAGE="JavaScript" ID="js1_{$key}">
-                                                    var cal1_{$key} = new CalendarPopup();
-                                                    cal1_{$key}.isShowNavigationDropdowns = true;
-                                                    cal1_{$key}.setYearSelectStartOffset(10);
+                                                <SCRIPT LANGUAGE="JavaScript" ID="jsC1_{$key}">
+                                                    var calC1_{$key} = new CalendarPopup();
+                                                    calC1_{$key}.isShowNavigationDropdowns = true;
+                                                    calC1_{$key}.setYearSelectStartOffset(10);
                                                     //writeSource("js1_{$key}");
                                                 </SCRIPT>
-                                                <A HREF="#" onClick="cal1_{$key}.select(document.getElementById('CertifStartDate_{$key}'),'anchor1_{$key}','dd.MM.yyyy'); return false;"
-                                                   NAME="anchor1_{$key}" ID="anchor1_{$key}"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                                <A HREF="#" onClick="calC1_{$key}.select(document.getElementById('CertifStartDate_{$key}'),'anchorC1_{$key}','dd.MM.yyyy'); return false;"
+                                                   NAME="anchorC1_{$key}" ID="anchorC1_{$key}"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
                                             </td>
                                             <td>
                                                 <input type="text" id="CertifStopDate_{$key}" name="StopDate_{$key}" value="{$item.StopDate|date_format:"%d.%m.%Y"}" class="formstyle"
@@ -454,6 +456,11 @@
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                     </tr>
+                                    {if $psyDocsNew}
+                                        <tr>
+                                            <td colspan="7" style="color: white; background-color: grey; padding: 5px; font-size: 12px">Sectiune date curente</td>
+                                        </tr>
+                                    {/if}
                                     {foreach from=$psyDocsNew key=key item=item}
                                         <tr>
                                             <td>
@@ -525,6 +532,9 @@
                                             </td>
                                         </tr>
                                     {/foreach}
+                                    <tr>
+                                        <td colspan="6" style="color: white; background-color: green; padding: 5px; font-size: 12px">Sectiune adaugare Inregistrare noua</td>
+                                    </tr>
                                     <tr>
                                         <td><input type="text" id="PsyDocName_0" name="PsyDocName_0" size="50" maxlength="256"></td>
                                         <td><input type="text" id="PsyDocNumber_0" name="PsyDocNumber_0" size="10" maxlength="10"></td>
@@ -611,6 +621,11 @@
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                     </tr>
+                                    {if $medDocsNew}
+                                        <tr>
+                                            <td colspan="7" style="color: white; background-color: grey; padding: 5px; font-size: 12px">Sectiune date curente</td>
+                                        </tr>
+                                    {/if}
                                     {foreach from=$medDocsNew key=key item=item}
                                         <tr>
                                             <td>
@@ -682,6 +697,9 @@
                                             </td>
                                         </tr>
                                     {/foreach}
+                                    <tr>
+                                        <td colspan="6" style="color: white; background-color: green; padding: 5px; font-size: 12px">Sectiune adaugare Inregistrare noua</td>
+                                    </tr>
                                     <tr>
                                         <td><input type="text" id="DocName_0" name="DocName_0" size="50" maxlength="256"></td>
                                         <td><input type="text" id="DocNumber_0" name="DocNumber_0" size="10" maxlength="10"></td>
@@ -767,24 +785,24 @@
                                         <td>&nbsp;</td>
                                         <td>&nbsp;</td>
                                     </tr>
-                                    <tr>
-                                        <td colspan="6">Categorii de vehicule</td>
-                                    </tr>
-
+                                    {if $cppc}
+                                        <tr>
+                                            <td colspan="6" style="color: white; background-color: grey; padding: 5px; font-size: 12px">Sectiune date curente</td>
+                                        </tr>
+                                    {/if}
                                     {foreach from=$cppc key=key item=item}
-
                                         <tr>
                                             <td>
                                                 <input type="text" id="ReleaseDate_{$key}" name="ReleaseDate_{$key}" value="{$item.ReleaseDate|date_format:"%d.%m.%Y"}" class="formstyle"
                                                        value="" size="10" maxlength="10">
                                                 <SCRIPT LANGUAGE="JavaScript" ID="js1_{$key}">
-                                                    var calcprd1_{$key} = new CalendarPopup();
-                                                    calcprd1_{$key}.isShowNavigationDropdowns = true;
-                                                    calcprd1_{$key}.setYearSelectStartOffset(10);
+                                                    var calrd_{$key} = new CalendarPopup();
+                                                    calrd_{$key}.isShowNavigationDropdowns = true;
+                                                    calrd_{$key}.setYearSelectStartOffset(10);
                                                     //writeSource("js1_{$key}");
                                                 </SCRIPT>
-                                                <A HREF="#" onClick="cal1_{$key}.select(document.getElementById('ReleaseDate_{$key}'),'anchorcprd_{$key}','dd.MM.yyyy'); return false;"
-                                                   NAME="anchorcprd_{$key}" ID="anchorcprd_{$key}"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                                <A HREF="#" onClick="calrd_{$key}.select(document.getElementById('ReleaseDate_{$key}'),'anchorrd_{$key}','dd.MM.yyyy'); return false;"
+                                                   NAME="anchorrd_{$key}" ID="anchorrd_{$key}"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
                                             </td>
                                             <td>
                                                 <input type="text" id="ExpirationDate_{$key}" name="ExpirationDate_{$key}" value="{$item.ExpirationDate|date_format:"%d.%m.%Y"}" class="formstyle"
@@ -799,34 +817,49 @@
                                                    NAME="anchorcped_{$key}" ID="anchorcped_{$key}"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
                                             </td>
                                             <td>
-                                                <input type="text" id="DrivingLicenseNumber_{$key}" name="DrivingLicenseNumber_{$key}" value="{$item.DrivingLicenseNumber}" size="50" maxlength="255">
+                                                <input type="text" id="DrivingLicenseNumber_{$key}" name="DrivingLicenseNumber_{$key}" value="{$item.DrivingLicenseNumber}" size="20" maxlength="20">
                                             </td>
                                             <td>
-                                                <input type="text" id="CertificateNumber_{$key}" name="CertificateNumber_{$key}" value="{$item.CertificateNumber}" size="50" maxlength="255">
+                                                <input type="text" id="CertificateNumber_{$key}" name="CertificateNumber_{$key}" value="{$item.CertificateNumber}" size="20" maxlength="20">
                                             </td>
                                             <td>{if $info.rw == 1}
                                                     <div id="button_mod"><a href="#"
-                                                                            onclick="if (document.getElementById('DocNumber_{$key}').value
-                                                                                    && document.getElementById('DocDate_{$key}').value
-                                                                                    && checkDate(document.getElementById('DocDate_{$key}').value, 'Data document')
-                                                                                    && document.getElementById('DocName_{$key}').value
-                                                                                    && document.getElementById('Issuer_{$key}').value
-                                                                                    && document.getElementById('DocType_{$key}').value)
-                                                                                    window.location.href = './?m=persons&o=editprof&PersonID={$smarty.get.PersonID}&action=editnewmedical&Id={$key}&DocNumber='
-                                                                                    + escape(document.getElementById('DocNumber_{$key}').value)
-                                                                                    + '&DocName=' + escape(document.getElementById('DocName_{$key}').value)
-                                                                                    + '&DocDate=' + document.getElementById('DocDate_{$key}').value
-                                                                                    + '&Issuer=' + escape(document.getElementById('Issuer_{$key}').value)
-                                                                                    + '&DocType=' + escape(document.getElementById('DocType_{$key}').value)
-                                                                                    + '&Approval=' + escape(document.getElementById('Approval_{$key}').value)
-                                                                                    + '&Recommendations=' + escape(document.getElementById('Recommendations_{$key}').value);
+                                                                            onclick="if (document.getElementById('DrivingLicenseNumber_{$key}').value
+                                                                                    && document.getElementById('ReleaseDate_{$key}').value
+                                                                                    && checkDate(document.getElementById('ReleaseDate_{$key}').value, 'Data Eliberare')
+                                                                                    && document.getElementById('ExpirationDate_{$key}').value
+                                                                                    && checkDate(document.getElementById('ExpirationDate_{$key}').value, 'Data Expirare'))
+                                                                                    window.location.href = './?m=persons&o=editprof&PersonID={$smarty.get.PersonID}&action=editCPPC&Id={$key}&ReleaseDate='
+                                                                                    + document.getElementById('ReleaseDate_{$key}').value
+                                                                                    + '&ExpirationDate=' + escape(document.getElementById('ExpirationDate_{$key}').value)
+                                                                                    + '&DrivingLicenseNumber=' + escape(document.getElementById('DrivingLicenseNumber_{$key}').value)
+                                                                                    + '&CertificateNumber=' + escape(document.getElementById('CertificateNumber_{$key}').value)
+                                                                                    + (document.getElementById('AM_{$key}').checked ? '+&AM=1' :'')
+                                                                                    + (document.getElementById('A1_{$key}').checked ? '+&A1=1' :'')
+                                                                                    + (document.getElementById('A2_{$key}').checked ? '+&A2=1' :'')
+                                                                                    + (document.getElementById('A_{$key}').checked ? '+&A=1' :'')
+                                                                                    + (document.getElementById('B1_{$key}').checked ? '+&B1=1' :'')
+                                                                                    + (document.getElementById('B_{$key}').checked ? '+&B=1' :'')
+                                                                                    + (document.getElementById('BE_{$key}').checked ? '+&BE=1' :'')
+                                                                                    + (document.getElementById('C1_{$key}').checked ? '+&C1=1' :'')
+                                                                                    + (document.getElementById('C1E_{$key}').checked ? '+&C1E=1' :'')
+                                                                                    + (document.getElementById('C_{$key}').checked ? '+&C=1' :'')
+                                                                                    + (document.getElementById('CE_{$key}').checked ? '+&CE=1' :'')
+                                                                                    + (document.getElementById('D1_{$key}').checked ? '+&D1=1' :'')
+                                                                                    + (document.getElementById('D1E_{$key}').checked ? '+&D1E=1' :'')
+                                                                                    + (document.getElementById('D_{$key}').checked ? '+&D=1' :'')
+                                                                                    + (document.getElementById('DE_{$key}').checked ? '+&DE=1' :'')
+                                                                                    + (document.getElementById('Tr_{$key}').checked ? '+&Tr=1' :'')
+                                                                                    + (document.getElementById('Tb_{$key}').checked ? '+&Tb=1' :'')
+                                                                                    + (document.getElementById('Tv_{$key}').checked ? '+&Tv=1' :'')
+                                                                                    ;
                                                                                     else alert('Va rugam sa completati toate informatiile'); return false;"
                                                                             title="Modifica Aviz Medical"><b>Mod</b></a></div>{/if}
                                             </td>
                                             <td>{if $info.rw == 1}
                                                     <div id="button_del"><a href="#"
-                                                                            onclick="if (confirm('{translate label='Sunteti sigur(a)?'}')) window.location.href = './?m=persons&o=editprof&PersonID={$smarty.get.PersonID}&action=delnewmedical&Id={$key}'; return false;"
-                                                                            title="{translate label='Sterge atestat'}"><b>Del</b></a></div>{/if}</td>
+                                                                            onclick="if (confirm('{translate label='Sunteti sigur(a)?'}')) window.location.href = './?m=persons&o=editprof&PersonID={$smarty.get.PersonID}&action=delCPPC&Id={$key}'; return false;"
+                                                                            title="{translate label='Sterge Certificat'}"><b>Del</b></a></div>{/if}</td>
                                         </tr>
                                         <tr>
                                             <td colspan="6">Categorii de vehicule</td>
@@ -834,46 +867,48 @@
                                         <tr>
                                             <td colspan="6">
 
-                                                <input type="checkbox" id="AM_0" name="AM_0" value="1" {if ($item.AM == 1)} checked {/if} />
+                                                <input type="checkbox" id="AM_{$key}" name="AM_{$key}" value="1" {if ($item.AM == 1)} checked {/if} />
                                                 AM&nbsp;&nbsp;
-                                                <input type="checkbox" id="A1_0" name="A1_0" value="1" {if ($item.A1 == 1)} checked {/if}/>
+                                                <input type="checkbox" id="A1_{$key}" name="A1_{$key}" value="1" {if ($item.A1 == 1)} checked {/if}/>
                                                 A1
-                                                <input type="checkbox" id="A2_0" name="A2_0" value="1" {if ($item.A2 == 1)} checked {/if}/>
+                                                <input type="checkbox" id="A2_{$key}" name="A2_{$key}" value="1" {if ($item.A2 == 1)} checked {/if}/>
                                                 A2
-                                                <input type="checkbox" id="A_0" name="A_0" value="1" {if ($item.A == 1)} checked {/if} />
+                                                <input type="checkbox" id="A_{$key}" name="A_{$key}" value="1" {if ($item.A == 1)} checked {/if} />
                                                 A
-                                                <input type="checkbox" id="B1_0" name="B1_0" value="1" {if ($item.B1 == 1)} checked {/if} />
+                                                <input type="checkbox" id="B1_{$key}" name="B1_{$key}" value="1" {if ($item.B1 == 1)} checked {/if} />
                                                 B1
-                                                <input type="checkbox" id="B_0" name="B_0" value="1" {if ($item.B == 1)} checked {/if} />
+                                                <input type="checkbox" id="B_{$key}" name="B_{$key}" value="1" {if ($item.B == 1)} checked {/if} />
                                                 B
-                                                <input type="checkbox" id="BE_0" name="BE_0" value="1" {if ($item.BE == 1)} checked {/if} />
+                                                <input type="checkbox" id="BE_{$key}" name="BE_{$key}" value="1" {if ($item.BE == 1)} checked {/if} />
                                                 BE
-                                                <input type="checkbox" id="C1_0" name="C1_0" value="1" {if ($item.C1 == 1)} checked {/if} />
+                                                <input type="checkbox" id="C1_{$key}" name="C1_{$key}" value="1" {if ($item.C1 == 1)} checked {/if} />
                                                 C1
-                                                <input type="checkbox" id="C1E_0" name="C1E_0" value="1" {if ($item.C1E == 1)} checked {/if} />
+                                                <input type="checkbox" id="C1E_{$key}" name="C1E_{$key}" value="1" {if ($item.C1E == 1)} checked {/if} />
                                                 C1E
-                                                <input type="checkbox" id="C_0" name="C_0" value="1" {if ($item.C == 1)} checked {/if} />
+                                                <input type="checkbox" id="C_{$key}" name="C_{$key}" value="1" {if ($item.C == 1)} checked {/if} />
                                                 C
-                                                <input type="checkbox" id="CE_0" name="CE_0" value="1" {if ($item.CE == 1)} checked {/if} />
+                                                <input type="checkbox" id="CE_{$key}" name="CE_{$key}" value="1" {if ($item.CE == 1)} checked {/if} />
                                                 CE
-                                                <input type="checkbox" id="D1_0" name="D1_0" value="1" {if ($item.D1 == 1)} checked {/if} />
+                                                <input type="checkbox" id="D1_{$key}" name="D1_{$key}" value="1" {if ($item.D1 == 1)} checked {/if} />
                                                 D1
-                                                <input type="checkbox" id="D1E_0" name="D1E_0" value="1" {if ($item.D1E == 1)} checked {/if} />
+                                                <input type="checkbox" id="D1E_{$key}" name="D1E_{$key}" value="1" {if ($item.D1E == 1)} checked {/if} />
                                                 D1E
-                                                <input type="checkbox" id="D_0" name="D_0" value="1" {if ($item.D == 1)} checked {/if} />
+                                                <input type="checkbox" id="D_{$key}" name="D_{$key}" value="1" {if ($item.D == 1)} checked {/if} />
                                                 D
-                                                <input type="checkbox" id="DE_0" name="DE_0" value="1" {if ($item.DE == 1)} checked {/if} />
+                                                <input type="checkbox" id="DE_{$key}" name="DE_{$key}" value="1" {if ($item.DE == 1)} checked {/if} />
                                                 DE
-                                                <input type="checkbox" id="Tr_0" name="Tr_0" value="1" {if ($item.Tr == 1)} checked {/if} />
+                                                <input type="checkbox" id="Tr_{$key}" name="Tr_{$key}" value="1" {if ($item.Tr == 1)} checked {/if} />
                                                 Tr
-                                                <input type="checkbox" id="Tb_0" name="Tb_0" value="1" {if ($item.Tb == 1)} checked {/if} />
+                                                <input type="checkbox" id="Tb_{$key}" name="Tb_{$key}" value="1" {if ($item.Tb == 1)} checked {/if} />
                                                 Tb
-                                                <input type="checkbox" id="Tv_0" name="Tv_0" value="1" {if ($item.Tv == 1)} checked {/if} />
+                                                <input type="checkbox" id="Tv_{$key}" name="Tv_{$key}" value="1" {if ($item.Tv == 1)} checked {/if} />
                                                 Tv
                                             </td>
                                         </tr>
-                                        -->
                                     {/foreach}
+                                    <tr>
+                                        <td colspan="5" style="color: white; background-color: green; padding: 5px; font-size: 12px">Sectiune adaugare Inregistrare noua</td>
+                                    </tr>
                                     <tr>
                                         <td>
                                             <input type="text" id="ReleaseDate_0" name="ReleaseDate_0" class="formstyle" value="" size="10" maxlength="10">
@@ -912,24 +947,24 @@
                                                                                 + '&ReleaseDate=' + escape(document.getElementById('ReleaseDate_0').value)
                                                                                 + '&ExpirationDate=' + escape(document.getElementById('ExpirationDate_0').value)
                                                                                 + '&CertificateNumber=' + document.getElementById('CertificateNumber_0').value
-                                                                                + '&AM=' + document.getElementById('AM_0').value
-                                                                                + '&A1=' + document.getElementById('A1_0').value
-                                                                                + '&A2=' + document.getElementById('A2_0').value
-                                                                                + '&A=' + document.getElementById('A_0').value
-                                                                                + '&B1=' + document.getElementById('B1_0').value
-                                                                                + '&B=' + document.getElementById('B_0').value
-                                                                                + '&BE=' + document.getElementById('BE_0').value
-                                                                                + '&C1=' + document.getElementById('C1_0').value
-                                                                                + '&C1E=' + document.getElementById('C1E_0').value
-                                                                                + '&C=' + document.getElementById('C_0').value
-                                                                                + '&CE=' + document.getElementById('CE_0').value
-                                                                                + '&D1=' + document.getElementById('D1_0').value
-                                                                                + '&D1E=' + document.getElementById('D1E_0').value
-                                                                                + '&D=' + document.getElementById('D_0').value
-                                                                                + '&DE=' + document.getElementById('DE_0').value
-                                                                                + '&Tr=' + document.getElementById('Tr_0').value
-                                                                                + '&Tb=' + document.getElementById('Tb_0').value
-                                                                                + '&Tv=' + document.getElementById('Tv_0').value
+                                                                                + (document.getElementById('AM_0').checked ? '+&AM=1' :'')
+                                                                                + (document.getElementById('A1_0').checked ? '+&A1=1' :'')
+                                                                                + (document.getElementById('A2_0').checked ? '+&A2=1' :'')
+                                                                                + (document.getElementById('A_0').checked ? '+&A=1' :'')
+                                                                                + (document.getElementById('B1_0').checked ? '+&B1=1' :'')
+                                                                                + (document.getElementById('B_0').checked ? '+&B=1' :'')
+                                                                                + (document.getElementById('BE_0').checked ? '+&BE=1' :'')
+                                                                                + (document.getElementById('C1_0').checked ? '+&C1=1' :'')
+                                                                                + (document.getElementById('C1E_0').checked ? '+&C1E=1' :'')
+                                                                                + (document.getElementById('C_0').checked ? '+&C=1' :'')
+                                                                                + (document.getElementById('CE_0').checked ? '+&CE=1' :'')
+                                                                                + (document.getElementById('D1_0').checked ? '+&D1=1' :'')
+                                                                                + (document.getElementById('D1E_0').checked ? '+&D1E=1' :'')
+                                                                                + (document.getElementById('D_0').checked ? '+&D=1' :'')
+                                                                                + (document.getElementById('DE_0').checked ? '+&DE=1' :'')
+                                                                                + (document.getElementById('Tr_0').checked ? '+&Tr=1' :'')
+                                                                                + (document.getElementById('Tb_0').checked ? '+&Tb=1' :'')
+                                                                                + (document.getElementById('Tv_0').checked ? '+&Tv=1' :'')
                                                                                 ;
                                                                                 else alert('Completati Titlul, Data, Emitentul, Numarul Documentului si Tipul de document'); return false;"
                                                                         title="Adauga CPPC"><b>Adauga</b></a></div>{/if}
@@ -943,41 +978,431 @@
 
                                         <td colspan="6">
 
-                                            <input type="checkbox" id="AM_0" name="AM_0" value="1" />
+                                            <input type="checkbox" id="AM_0" name="AM_0" value="0" />
                                             AM&nbsp;&nbsp;
-                                            <input type="checkbox" id="A1_0" name="A1_0" value="1"/>
+                                            <input type="checkbox" id="A1_0" name="A1_0" value="0"/>
                                             A1
-                                            <input type="checkbox" id="A2_0" name="A2_0" value="1"/>
+                                            <input type="checkbox" id="A2_0" name="A2_0" value="0"/>
                                             A2
-                                            <input type="checkbox" id="A_0" name="A_0" value="1" />
+                                            <input type="checkbox" id="A_0" name="A_0" value="0" />
                                             A
-                                            <input type="checkbox" id="B1_0" name="B1_0" value="1" />
+                                            <input type="checkbox" id="B1_0" name="B1_0" value="0" />
                                             B1
-                                            <input type="checkbox" id="B_0" name="B_0" value="1" />
+                                            <input type="checkbox" id="B_0" name="B_0" value="0" />
                                             B
-                                            <input type="checkbox" id="BE_0" name="BE_0" value="1" />
+                                            <input type="checkbox" id="BE_0" name="BE_0" value="0" />
                                             BE
-                                            <input type="checkbox" id="C1_0" name="C1_0" value="1" />
+                                            <input type="checkbox" id="C1_0" name="C1_0" value="0" />
                                             C1
-                                            <input type="checkbox" id="C1E_0" name="C1E_0" value="1" />
+                                            <input type="checkbox" id="C1E_0" name="C1E_0" value="0" />
                                             C1E
-                                            <input type="checkbox" id="C_0" name="C_0" value="1" />
+                                            <input type="checkbox" id="C_0" name="C_0" value="0" />
                                             C
-                                            <input type="checkbox" id="CE_0" name="CE_0" value="1" />
+                                            <input type="checkbox" id="CE_0" name="CE_0" value="0" />
                                             CE
-                                            <input type="checkbox" id="D1_0" name="D1_0" value="1" />
+                                            <input type="checkbox" id="D1_0" name="D1_0" value="0" />
                                             D1
-                                            <input type="checkbox" id="D1E_0" name="D1E_0" value="1" />
+                                            <input type="checkbox" id="D1E_0" name="D1E_0" value="0" />
                                             D1E
-                                            <input type="checkbox" id="D_0" name="D_0" value="1" />
+                                            <input type="checkbox" id="D_0" name="D_0" value="0" />
                                             D
-                                            <input type="checkbox" id="DE_0" name="DE_0" value="1" />
+                                            <input type="checkbox" id="DE_0" name="DE_0" value="0" />
                                             DE
-                                            <input type="checkbox" id="Tr_0" name="Tr_0" value="1" />
+                                            <input type="checkbox" id="Tr_0" name="Tr_0" value="0" />
                                             Tr
-                                            <input type="checkbox" id="Tb_0" name="Tb_0" value="1" />
+                                            <input type="checkbox" id="Tb_0" name="Tb_0" value="0" />
                                             Tb
-                                            <input type="checkbox" id="Tv_0" name="Tv_0" value="1" />
+                                            <input type="checkbox" id="Tv_0" name="Tv_0" value="0" />
+                                            Tv
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </fieldset>
+                        </td>
+                    </tr>
+
+                    {************ Cartela Conducatorului Auto ***********}
+
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>Cartela Conducătorului Auto</legend>
+                                <table cellspacing="0" cellpadding="4">
+                                    <tr>
+                                        <td>Data Eliberării</td></td>
+                                        <td>Data expirării</td>
+                                        <td>Număr permis conducere</td>
+                                        <td>Număr certificat</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    {if $cca}
+                                        <tr>
+                                            <td colspan="6" style="color: white; background-color: grey; padding: 5px; font-size: 12px">Sectiune date curente</td>
+                                        </tr>
+                                    {/if}
+                                    {foreach from=$cca key=key item=item}
+
+                                        <tr>
+                                            <td>
+                                                <input type="text" id="ReleaseDateCCA_{$key}" name="ReleaseDateCCA_{$key}" value="{$item.ReleaseDate|date_format:"%d.%m.%Y"}" class="formstyle"
+                                                       value="" size="10" maxlength="10">
+                                                <SCRIPT LANGUAGE="JavaScript" ID="js1_{$key}">
+                                                    var calrdcca_{$key} = new CalendarPopup();
+                                                    calrdcca_{$key}.isShowNavigationDropdowns = true;
+                                                    calrdcca_{$key}.setYearSelectStartOffset(10);
+                                                    //writeSource("js1_{$key}");
+                                                </SCRIPT>
+                                                <A HREF="#" onClick="calrdcca_{$key}.select(document.getElementById('ReleaseDateCCA_{$key}'),'anchorrdcca_{$key}','dd.MM.yyyy'); return false;"
+                                                   NAME="anchorrdcca_{$key}" ID="anchorrdcca_{$key}"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                            </td>
+                                            <td>
+                                                <input type="text" id="ExpirationDateCCA_{$key}" name="ExpirationDateCCA_{$key}" value="{$item.ExpirationDate|date_format:"%d.%m.%Y"}" class="formstyle"
+                                                       value="" size="10" maxlength="10">
+                                                <SCRIPT LANGUAGE="JavaScript" ID="js1_{$key}">
+                                                    var calcpedcca_{$key} = new CalendarPopup();
+                                                    calcpedcca_{$key}.isShowNavigationDropdowns = true;
+                                                    calcpedcca_{$key}.setYearSelectStartOffset(10);
+                                                    //writeSource("js1_{$key}");
+                                                </SCRIPT>
+                                                <A HREF="#" onClick="calcpedcca_{$key}.select(document.getElementById('ExpirationDateCCA_{$key}'),'anchorcpedcca_{$key}','dd.MM.yyyy'); return false;"
+                                                   NAME="anchorcpedcca_{$key}" ID="anchorcpedcca_{$key}"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                            </td>
+                                            <td>
+                                                <input type="text" id="DrivingLicenseNumberCCA_{$key}" name="DrivingLicenseNumberCCA_{$key}" value="{$item.DrivingLicenseNumber}" size="20" maxlength="20">
+                                            </td>
+                                            <td>
+                                                <input type="text" id="DriverCardNumberCCA_{$key}" name="DriverCardNumberCCA_{$key}" value="{$item.CardNumber}" size="20" maxlength="20">
+                                            </td>
+                                            <td>{if $info.rw == 1}
+                                                    <div id="button_mod"><a href="#"
+                                                                            onclick="if (document.getElementById('DriverCardNumberCCA_{$key}').value
+                                                                                    && document.getElementById('ReleaseDateCCA_{$key}').value
+                                                                                    && checkDate(document.getElementById('ReleaseDateCCA_{$key}').value, 'Data Eliberare')
+                                                                                    && document.getElementById('ExpirationDateCCA_{$key}').value
+                                                                                    && checkDate(document.getElementById('ExpirationDateCCA_{$key}').value, 'Data Expirare'))
+                                                                                    window.location.href = './?m=persons&o=editprof&PersonID={$smarty.get.PersonID}&action=editCCA&Id={$key}&ReleaseDate='
+                                                                                    + document.getElementById('ReleaseDateCCA_{$key}').value
+                                                                                    + '&ExpirationDate=' + escape(document.getElementById('ExpirationDateCCA_{$key}').value)
+                                                                                    + '&DrivingLicenseNumber=' + escape(document.getElementById('DrivingLicenseNumberCCA_{$key}').value)
+                                                                                    + '&CardNumber=' + escape(document.getElementById('DriverCardNumberCCA_{$key}').value)
+                                                                                    ;
+                                                                                    else alert('Va rugam sa completati toate informatiile'); return false;"
+                                                                            title="Modifica Cartela Conducator Auto"><b>Mod</b></a></div>{/if}
+                                            </td>
+                                            <td>{if $info.rw == 1}
+                                                    <div id="button_del"><a href="#"
+                                                                            onclick="if (confirm('{translate label='Sunteti sigur(a)?'}')) window.location.href = './?m=persons&o=editprof&PersonID={$smarty.get.PersonID}&action=delCCA&Id={$key}'; return false;"
+                                                                            title="{translate label='Sterge Certificat'}"><b>Del</b></a></div>{/if}</td>
+                                        </tr>
+
+                                    {/foreach}
+                                    <tr>
+                                        <td colspan="5" style="color: white; background-color: green; padding: 5px; font-size: 12px">Sectiune adaugare Inregistrare noua</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" id="ReleaseDateCCA_0" name="ReleaseDateCCA_0" class="formstyle" value="" size="10" maxlength="10">
+                                            <SCRIPT LANGUAGE="JavaScript" ID="js1_0">
+                                                var calRDCCA_0 = new CalendarPopup();
+                                                calRDCCA_0.isShowNavigationDropdowns = true;
+                                                calRDCCA_0.setYearSelectStartOffset(10);
+                                                //writeSource("js1_0");
+                                            </SCRIPT>
+                                            <A HREF="#" onClick="calRDCCA_0.select(document.getElementById('ReleaseDateCCA_0'),'anchorRDCCA_0','dd.MM.yyyy'); return false;" NAME="anchorRDCCA_0"
+                                               ID="anchorRDCCA_0"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                        </td>
+                                        <td>
+                                            <input type="text" id="ExpirationDateCCA_0" name="ExpirationDateCCA_0" class="formstyle" value="" size="10" maxlength="10">
+                                            <SCRIPT LANGUAGE="JavaScript" ID="js1_0">
+                                                var calEDCCA_0 = new CalendarPopup();
+                                                calEDCCA_0.isShowNavigationDropdowns = true;
+                                                calEDCCA_0.setYearSelectStartOffset(10);
+                                                //writeSource("js1_0");
+                                            </SCRIPT>
+                                            <A HREF="#" onClick="calEDCCA_0.select(document.getElementById('ExpirationDateCCA_0'),'anchorEDCCA_0','dd.MM.yyyy'); return false;" NAME="anchorEDCCA_0"
+                                               ID="anchorEDCCA_0"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                        </td>
+                                        <td><input type="text" id="DrivingLicenseNumberCCA_0" name="DrivingLicenseNumberCCA_0" size="20" maxlength="20"></td>
+                                        <td><input type="text" id="DriverCardNumberCCA_0" name="DriverCardNumberCCA_0" size="20" maxlength="20"></td>
+                                        <td colspan="2">
+                                            {if $info.rw == 1}
+                                                <div id="button_add"><a href="#"
+                                                                        onclick="if (document.getElementById('DrivingLicenseNumberCCA_0').value
+                                                                                && document.getElementById('ReleaseDateCCA_0').value
+                                                                                && checkDate(document.getElementById('ReleaseDateCCA_0').value, 'Data Eliberare')
+                                                                                && document.getElementById('ExpirationDateCCA_0').value
+                                                                                && checkDate(document.getElementById('ExpirationDateCCA_0').value, 'Data Expirare'))
+                                                                                window.location.href = './?m=persons&o=editprof&PersonID={$smarty.get.PersonID}&action=newCCA&DrivingLicenseNumber='
+                                                                                + escape(document.getElementById('DrivingLicenseNumberCCA_0').value)
+                                                                                + '&ReleaseDate=' + escape(document.getElementById('ReleaseDateCCA_0').value)
+                                                                                + '&ExpirationDate=' + escape(document.getElementById('ExpirationDateCCA_0').value)
+                                                                                + '&CardNumber=' + document.getElementById('DriverCardNumberCCA_0').value
+                                                                                ;
+                                                                                else alert('Completati Data Emiterii, Data Expirarii, Numar permis auto'); return false;"
+                                                                        title="Adauga CPPC"><b>Adauga</b></a></div>{/if}
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                        </td>
+                    </tr>
+
+                    {************ Permis Auto ***********}
+
+                    <tr>
+                        <td colspan="2">
+                            <fieldset>
+                                <legend>Permise Auto</legend>
+                                <table cellspacing="0" cellpadding="4">
+                                    <tr>
+                                        <td>Data Eliberării</td></td>
+                                        <td>Data expirării</td>
+                                        <td>Număr permis conducere</td>
+                                        <td>Emitent</td>
+                                        <td>Restrictii</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    {if $dl}
+                                        <tr>
+                                            <td colspan="7" style="color: white; background-color: grey; padding: 5px; font-size: 12px">Sectiune date curente</td>
+                                        </tr>
+                                    {/if}
+                                    {foreach from=$dl key=key item=item}
+
+                                        <tr>
+                                            <td>
+                                                <input type="text" id="ReleaseDateDL_{$key}" name="ReleaseDateDL_{$key}" value="{$item.ReleaseDate|date_format:"%d.%m.%Y"}" class="formstyle"
+                                                       value="" size="10" maxlength="10">
+                                                <SCRIPT LANGUAGE="JavaScript" ID="js1_{$key}">
+                                                    var calrdDL_{$key} = new CalendarPopup();
+                                                    calrdDL_{$key}.isShowNavigationDropdowns = true;
+                                                    calrdDL_{$key}.setYearSelectStartOffset(10);
+                                                    //writeSource("js1_{$key}");
+                                                </SCRIPT>
+                                                <A HREF="#" onClick="calrdDL_{$key}.select(document.getElementById('ReleaseDateDL_{$key}'),'anchorrdDL_{$key}','dd.MM.yyyy'); return false;"
+                                                   NAME="anchorrdDL_{$key}" ID="anchorrdDL_{$key}"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                            </td>
+                                            <td>
+                                                <input type="text" id="ExpirationDateDL_{$key}" name="ExpirationDateDL_{$key}" value="{$item.ExpirationDate|date_format:"%d.%m.%Y"}" class="formstyle"
+                                                       value="" size="10" maxlength="10">
+                                                <SCRIPT LANGUAGE="JavaScript" ID="js1_{$key}">
+                                                    var calcpedDL_{$key} = new CalendarPopup();
+                                                    calcpedDL_{$key}.isShowNavigationDropdowns = true;
+                                                    calcpedDL_{$key}.setYearSelectStartOffset(10);
+                                                    //writeSource("js1_{$key}");
+                                                </SCRIPT>
+                                                <A HREF="#" onClick="calcpedDL_{$key}.select(document.getElementById('ExpirationDateDL_{$key}'),'anchorcpedDL_{$key}','dd.MM.yyyy'); return false;"
+                                                   NAME="anchorcpedDL_{$key}" ID="anchorcpedDL_{$key}"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                            </td>
+                                            <td>
+                                                <input type="text" id="DrivingLicenseNumberDL_{$key}" name="DrivingLicenseNumberDL_{$key}" value="{$item.DrivingLicenseNumber}" size="20" maxlength="20">
+                                            </td>
+                                            <td>
+                                                <input type="text" id="IssuerDL_{$key}" name="IssuerDL_{$key}" value="{$item.Issuer}" size="20" maxlength="20">
+                                            </td>
+                                            <td>
+                                                <input type="text" id="RestrictionsDL_{$key}" name="RestrictionsDL_{$key}" value="{$item.Restrictions}" size="50" maxlength="50">
+                                            </td>
+                                            <td>{if $info.rw == 1}
+                                                    <div id="button_mod"><a href="#"
+                                                                            onclick="if (document.getElementById('DrivingLicenseNumberDL_{$key}').value
+                                                                                    && document.getElementById('IssuerDL_{$key}').value
+                                                                                    && document.getElementById('ReleaseDateDL_{$key}').value
+                                                                                    && checkDate(document.getElementById('ReleaseDateDL_{$key}').value, 'Data Eliberare')
+                                                                                    && document.getElementById('ExpirationDateDL_{$key}').value
+                                                                                    && checkDate(document.getElementById('ExpirationDateDL_{$key}').value, 'Data Expirare'))
+                                                                                    window.location.href = './?m=persons&o=editprof&PersonID={$smarty.get.PersonID}&action=editDL&Id={$key}&ReleaseDate='
+                                                                                    + document.getElementById('ReleaseDateDL_{$key}').value
+                                                                                    + '&ExpirationDate=' + escape(document.getElementById('ExpirationDateDL_{$key}').value)
+                                                                                    + '&DrivingLicenseNumber=' + escape(document.getElementById('DrivingLicenseNumberDL_{$key}').value)
+                                                                                    + '&Issuer=' + escape(document.getElementById('IssuerDL_{$key}').value)
+                                                                                    + '&Restrictions=' + escape(document.getElementById('RestrictionsDL_{$key}').value)
+                                                                                    + (document.getElementById('AMDL_{$key}').checked ? '+&AM=1' :'')
+                                                                                    + (document.getElementById('A1DL_{$key}').checked ? '+&A1=1' :'')
+                                                                                    + (document.getElementById('A2DL_{$key}').checked ? '+&A2=1' :'')
+                                                                                    + (document.getElementById('ADL_{$key}').checked ? '+&A=1' :'')
+                                                                                    + (document.getElementById('B1DL_{$key}').checked ? '+&B1=1' :'')
+                                                                                    + (document.getElementById('BDL_{$key}').checked ? '+&B=1' :'')
+                                                                                    + (document.getElementById('BEDL_{$key}').checked ? '+&BE=1' :'')
+                                                                                    + (document.getElementById('C1DL_{$key}').checked ? '+&C1=1' :'')
+                                                                                    + (document.getElementById('C1EDL_{$key}').checked ? '+&C1E=1' :'')
+                                                                                    + (document.getElementById('CDL_{$key}').checked ? '+&C=1' :'')
+                                                                                    + (document.getElementById('CEDL_{$key}').checked ? '+&CE=1' :'')
+                                                                                    + (document.getElementById('D1DL_{$key}').checked ? '+&D1=1' :'')
+                                                                                    + (document.getElementById('D1EDL_{$key}').checked ? '+&D1E=1' :'')
+                                                                                    + (document.getElementById('DDL_{$key}').checked ? '+&D=1' :'')
+                                                                                    + (document.getElementById('DEDL_{$key}').checked ? '+&DE=1' :'')
+                                                                                    + (document.getElementById('TrDL_{$key}').checked ? '+&Tr=1' :'')
+                                                                                    + (document.getElementById('TbDL_{$key}').checked ? '+&Tb=1' :'')
+                                                                                    + (document.getElementById('TvDL_{$key}').checked ? '+&Tv=1' :'')
+                                                                                    ;
+                                                                                    else alert('Va rugam sa completati toate informatiile'); return false;"
+                                                                            title="Modifica Permis de Conducere"><b>Mod</b></a></div>{/if}
+                                            </td>
+                                            <td>{if $info.rw == 1}
+                                                    <div id="button_del"><a href="#"
+                                                                            onclick="if (confirm('{translate label='Sunteti sigur(a)?'}')) window.location.href = './?m=persons&o=editprof&PersonID={$smarty.get.PersonID}&action=delDL&Id={$key}'; return false;"
+                                                                            title="{translate label='Sterge Permis de Conducere'}"><b>Del</b></a></div>{/if}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6">Categorii de vehicule</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6">
+
+                                                <input type="checkbox" id="AMDL_{$key}" name="AMDL_{$key}" value="1" {if ($item.AM == 1)} checked {/if} />
+                                                AM&nbsp;&nbsp;
+                                                <input type="checkbox" id="A1DL_{$key}" name="A1DL_{$key}" value="1" {if ($item.A1 == 1)} checked {/if}/>
+                                                A1
+                                                <input type="checkbox" id="A2DL_{$key}" name="A2DL_{$key}" value="1" {if ($item.A2 == 1)} checked {/if}/>
+                                                A2
+                                                <input type="checkbox" id="ADL_{$key}" name="ADL_{$key}" value="1" {if ($item.A == 1)} checked {/if} />
+                                                A
+                                                <input type="checkbox" id="B1DL_{$key}" name="B1DL_{$key}" value="1" {if ($item.B1 == 1)} checked {/if} />
+                                                B1
+                                                <input type="checkbox" id="BDL_{$key}" name="BDL_{$key}" value="1" {if ($item.B == 1)} checked {/if} />
+                                                B
+                                                <input type="checkbox" id="BEDL_{$key}" name="BEDL_{$key}" value="1" {if ($item.BE == 1)} checked {/if} />
+                                                BE
+                                                <input type="checkbox" id="C1DL_{$key}" name="C1DL_{$key}" value="1" {if ($item.C1 == 1)} checked {/if} />
+                                                C1
+                                                <input type="checkbox" id="C1EDL_{$key}" name="C1EDL_{$key}" value="1" {if ($item.C1E == 1)} checked {/if} />
+                                                C1E
+                                                <input type="checkbox" id="CDL_{$key}" name="CDL_{$key}" value="1" {if ($item.C == 1)} checked {/if} />
+                                                C
+                                                <input type="checkbox" id="CEDL_{$key}" name="CEDL_{$key}" value="1" {if ($item.CE == 1)} checked {/if} />
+                                                CE
+                                                <input type="checkbox" id="D1DL_{$key}" name="D1DL_{$key}" value="1" {if ($item.D1 == 1)} checked {/if} />
+                                                D1
+                                                <input type="checkbox" id="D1EDL_{$key}" name="D1EDL_{$key}" value="1" {if ($item.D1E == 1)} checked {/if} />
+                                                D1E
+                                                <input type="checkbox" id="DDL_{$key}" name="DDL_{$key}" value="1" {if ($item.D == 1)} checked {/if} />
+                                                D
+                                                <input type="checkbox" id="DEDL_{$key}" name="DEDL_{$key}" value="1" {if ($item.DE == 1)} checked {/if} />
+                                                DE
+                                                <input type="checkbox" id="TrDL_{$key}" name="TrDL_{$key}" value="1" {if ($item.Tr == 1)} checked {/if} />
+                                                Tr
+                                                <input type="checkbox" id="TbDL_{$key}" name="TbDL_{$key}" value="1" {if ($item.Tb == 1)} checked {/if} />
+                                                Tb
+                                                <input type="checkbox" id="TvDL_{$key}" name="TvDL_{$key}" value="1" {if ($item.Tv == 1)} checked {/if} />
+                                                Tv
+                                            </td>
+                                        </tr>
+                                    {/foreach}
+                                    <tr>
+                                        <td colspan="6" style="color: white; background-color: green; padding: 5px; font-size: 12px">Sectiune adaugare Inregistrare noua</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" id="ReleaseDateDL_0" name="ReleaseDateDL_0" class="formstyle" value="" size="10" maxlength="10">
+                                            <SCRIPT LANGUAGE="JavaScript" ID="js1_0">
+                                                var calRDDL_0 = new CalendarPopup();
+                                                calRDDL_0.isShowNavigationDropdowns = true;
+                                                calRDDL_0.setYearSelectStartOffset(10);
+                                                //writeSource("js1_0");
+                                            </SCRIPT>
+                                            <A HREF="#" onClick="calRDDL_0.select(document.getElementById('ReleaseDateDL_0'),'anchorRDDL_0','dd.MM.yyyy'); return false;" NAME="anchorRDDL_0"
+                                               ID="anchorRDDL_0"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                        </td>
+                                        <td>
+                                            <input type="text" id="ExpirationDateDL_0" name="ExpirationDateDL_0" class="formstyle" value="" size="10" maxlength="10">
+                                            <SCRIPT LANGUAGE="JavaScript" ID="js1_0">
+                                                var calEDDL_0 = new CalendarPopup();
+                                                calEDDL_0.isShowNavigationDropdowns = true;
+                                                calEDDL_0.setYearSelectStartOffset(10);
+                                                //writeSource("js1_0");
+                                            </SCRIPT>
+                                            <A HREF="#" onClick="calEDDL_0.select(document.getElementById('ExpirationDateDL_0'),'anchorEDDL_0','dd.MM.yyyy'); return false;" NAME="anchorEDDL_0"
+                                               ID="anchorEDDL_0"><img src="./images/cal.png" border="0" alt="selecteaza data" align="absbottom"></A>
+                                        </td>
+                                        <td><input type="text" id="DrivingLicenseNumberDL_0" name="DrivingLicenseNumberDL_0" size="20" maxlength="20"></td>
+                                        <td><input type="text" id="IssuerDL_0" name="IssuerDL_0" size="20" maxlength="20"></td>
+                                        <td><input type="text" id="RestrictionsDL_0" name="RestrictionsDL_0" size="50" maxlength="50"></td>
+                                        <td colspan="2">
+                                            {if $info.rw == 1}
+                                                <div id="button_add"><a href="#"
+                                                                        onclick="if (document.getElementById('DrivingLicenseNumberDL_0').value
+                                                                                && document.getElementById('ReleaseDateDL_0').value
+                                                                                && checkDate(document.getElementById('ReleaseDateDL_0').value, 'Data Eliberare')
+                                                                                && document.getElementById('ExpirationDateDL_0').value
+                                                                                && checkDate(document.getElementById('ExpirationDateDL_0').value, 'Data Expirare')
+                                                                                && document.getElementById('IssuerDL_0').value)
+                                                                                window.location.href = './?m=persons&o=editprof&PersonID={$smarty.get.PersonID}&action=newDL&DrivingLicenseNumber='
+                                                                                + escape(document.getElementById('DrivingLicenseNumberDL_0').value)
+                                                                                + '&ReleaseDate=' + escape(document.getElementById('ReleaseDateDL_0').value)
+                                                                                + '&ExpirationDate=' + escape(document.getElementById('ExpirationDateDL_0').value)
+                                                                                + '&Issuer=' + document.getElementById('IssuerDL_0').value
+                                                                                + '&Restrictions=' + document.getElementById('RestrictionsDL_0').value
+                                                                                + (document.getElementById('AMDL_0').checked ? '+&AM=1' :'')
+                                                                                + (document.getElementById('A1DL_0').checked ? '+&A1=1' :'')
+                                                                                + (document.getElementById('A2DL_0').checked ? '+&A2=1' :'')
+                                                                                + (document.getElementById('ADL_0').checked ? '+&A=1' :'')
+                                                                                + (document.getElementById('B1DL_0').checked ? '+&B1=1' :'')
+                                                                                + (document.getElementById('BDL_0').checked ? '+&B=1' :'')
+                                                                                + (document.getElementById('BEDL_0').checked ? '+&BE=1' :'')
+                                                                                + (document.getElementById('C1DL_0').checked ? '+&C1=1' :'')
+                                                                                + (document.getElementById('C1EDL_0').checked ? '+&C1E=1' :'')
+                                                                                + (document.getElementById('CDL_0').checked ? '+&C=1' :'')
+                                                                                + (document.getElementById('CEDL_0').checked ? '+&CE=1' :'')
+                                                                                + (document.getElementById('D1DL_0').checked ? '+&D1=1' :'')
+                                                                                + (document.getElementById('D1EDL_0').checked ? '+&D1E=1' :'')
+                                                                                + (document.getElementById('DDL_0').checked ? '+&D=1' :'')
+                                                                                + (document.getElementById('DEDL_0').checked ? '+&DE=1' :'')
+                                                                                + (document.getElementById('TrDL_0').checked ? '+&Tr=1' :'')
+                                                                                + (document.getElementById('TbDL_0').checked ? '+&Tb=1' :'')
+                                                                                + (document.getElementById('TvDL_0').checked ? '+&Tv=1' :'')
+                                                                                ;
+                                                                                else alert('Completati T Data Emitere, Data Expirare, Emitentul, Numarul Permisului de conducere'); return false;"
+                                                                        title="Adauga CPPC"><b>Adauga</b></a></div>{/if}
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">Categorii de vehicule</td>
+                                    </tr>
+                                    <tr>
+
+                                        <td colspan="6">
+
+                                            <input type="checkbox" id="AMDL_0" name="AMDL_0" value="0" />
+                                            AM&nbsp;&nbsp;
+                                            <input type="checkbox" id="A1DL_0" name="A1DL_0" value="0"/>
+                                            A1
+                                            <input type="checkbox" id="A2DL_0" name="A2DL_0" value="0"/>
+                                            A2
+                                            <input type="checkbox" id="ADL_0" name="ADL_0" value="0" />
+                                            A
+                                            <input type="checkbox" id="B1DL_0" name="B1_0" value="0" />
+                                            B1
+                                            <input type="checkbox" id="BDL_0" name="BDL_0" value="0" />
+                                            B
+                                            <input type="checkbox" id="BEDL_0" name="BEDL_0" value="0" />
+                                            BE
+                                            <input type="checkbox" id="C1DL_0" name="C1DL_0" value="0" />
+                                            C1
+                                            <input type="checkbox" id="C1EDL_0" name="C1EDL_0" value="0" />
+                                            C1E
+                                            <input type="checkbox" id="CDL_0" name="CDL_0" value="0" />
+                                            C
+                                            <input type="checkbox" id="CEDL_0" name="CEDL_0" value="0" />
+                                            CE
+                                            <input type="checkbox" id="D1DL_0" name="D1DL_0" value="0" />
+                                            D1
+                                            <input type="checkbox" id="D1EDL_0" name="D1EDL_0" value="0" />
+                                            D1E
+                                            <input type="checkbox" id="DDL_0" name="DDL_0" value="0" />
+                                            D
+                                            <input type="checkbox" id="DEDL_0" name="DEDL_0" value="0" />
+                                            DE
+                                            <input type="checkbox" id="TrDL_0" name="TrDL_0" value="0" />
+                                            Tr
+                                            <input type="checkbox" id="TbDL_0" name="TbDL_0" value="0" />
+                                            Tb
+                                            <input type="checkbox" id="TvDL_0" name="TvDL_0" value="0" />
                                             Tv
                                         </td>
                                     </tr>
@@ -996,6 +1421,7 @@
     </tr>
 </table>
 
+
 {literal}
 <script type="text/javascript">
     function validateForm(f) {
@@ -1011,5 +1437,6 @@
         return true;
     }
 </script>
+
 {/literal}
 
